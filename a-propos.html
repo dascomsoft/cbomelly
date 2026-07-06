@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Decouvrez l'histoire, la mission et les valeurs de Cbomelly Immobilier. Votre expert en immobilier foncier au Cameroun depuis 2012.">
+    <title>A Propos | Cbomelly Immobilier - Cameroun</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#D4AF37',
+                        'gold-dark': '#B8860B',
+                        'gold-light': '#E8C84A',
+                    },
+                    fontFamily: {
+                        nunito: ['Nunito', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Nunito', sans-serif; }
+        .gold-gradient { background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); }
+        .gold-text-gradient { background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-overlay { background: linear-gradient(to bottom, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.7) 50%, rgba(15, 23, 42, 1) 100%); }
+        .nav-scrolled { background: rgba(15, 23, 42, 0.95) !important; backdrop-filter: blur(20px); box-shadow: 0 4px 30px rgba(0,0,0,0.3); }
+        .card-hover:hover { transform: translateY(-8px); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15); }
+        .btn-gold { background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); transition: all 0.3s ease; }
+        .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4); }
+        .section-divider { width: 80px; height: 4px; background: linear-gradient(90deg, #D4AF37, #B8860B); border-radius: 2px; }
+        .timeline-line { position: absolute; left: 24px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, #D4AF37, #B8860B); }
+        .value-card { transition: all 0.4s ease; }
+        .value-card:hover { transform: translateY(-5px); }
+        .team-card:hover .team-overlay { opacity: 1; }
+        .team-overlay { opacity: 0; transition: opacity 0.4s ease; }
+        .stat-number { font-variant-numeric: tabular-nums; }
+    </style>
+<base target="_blank">
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased overflow-x-hidden">
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav id="mainNav" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 py-5">
+        <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 gold-gradient rounded-xl flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300">
+                    <span class="text-white font-black text-xl">C</span>
+                </div>
+                <div>
+                    <span class="text-2xl font-black tracking-tight text-white block leading-none">CBOMELLY</span>
+                    <span class="text-[10px] tracking-[0.35em] text-gold font-bold uppercase">Immobilier</span>
+                </div>
+            </a>
+            <div class="hidden lg:flex items-center gap-10">
+                <a href="index.html" class="text-sm font-bold tracking-wide text-white/90 hover:text-gold transition-colors uppercase relative group">
+                    Accueil<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="terrains.html" class="text-sm font-bold tracking-wide text-white/90 hover:text-gold transition-colors uppercase relative group">
+                    Nos Terrains<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="a-propos.html" class="text-sm font-bold tracking-wide text-gold uppercase relative">
+                    A Propos<span class="absolute -bottom-1 left-0 w-full h-0.5 bg-gold"></span>
+                </a>
+                <a href="conseils.html" class="text-sm font-bold tracking-wide text-white/90 hover:text-gold transition-colors uppercase relative group">
+                    Conseils<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="contact.html" class="px-7 py-3 gold-gradient text-slate-900 text-sm font-black rounded-full hover:shadow-gold transition-all shadow-lg">Contact</a>
+            </div>
+            <button id="mobileMenuBtn" class="lg:hidden text-white text-2xl p-2" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div id="mobileMenu" class="hidden lg:hidden bg-slate-900/98 backdrop-blur-xl border-t border-white/10">
+            <div class="px-6 py-6 flex flex-col gap-1">
+                <a href="index.html" class="text-white/90 hover:text-gold hover:bg-white/5 py-3 px-4 rounded-xl transition-all font-semibold">Accueil</a>
+                <a href="terrains.html" class="text-white/90 hover:text-gold hover:bg-white/5 py-3 px-4 rounded-xl transition-all font-semibold">Nos Terrains</a>
+                <a href="a-propos.html" class="text-gold font-black py-3 px-4">A Propos</a>
+                <a href="conseils.html" class="text-white/90 hover:text-gold hover:bg-white/5 py-3 px-4 rounded-xl transition-all font-semibold">Conseils</a>
+                <a href="contact.html" class="text-gold font-black py-3 px-4">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO A PROPOS ==================== -->
+    <section class="relative min-h-[55vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="images/terrain10.jpeg" alt="A propos de Cbomelly Immobilier" class="w-full h-full object-cover">
+            <div class="hero-overlay absolute inset-0"></div>
+        </div>
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center pt-24" data-aos="fade-up">
+            <span class="text-gold text-sm font-bold tracking-[0.25em] uppercase">Notre Identite</span>
+            <h1 class="text-5xl md:text-6xl font-black text-white mt-4 mb-6">A Propos de Cbomelly Immobilier</h1>
+            <p class="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">Votre partenaire de confiance dans l'immobilier foncier au Cameroun depuis plus d'une decennie. Expertise, transparence et accompagnement personnalise.</p>
+        </div>
+    </section>
+
+    <!-- ==================== HISTOIRE ==================== -->
+    <section class="py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right">
+                    <img src="images/terrain7.jpeg" alt="Histoire Cbomelly Immobilier" class="rounded-3xl shadow-2xl w-full h-[520px] object-cover">
+                </div>
+                <div data-aos="fade-left">
+                    <span class="text-gold text-sm font-bold tracking-[0.25em] uppercase">Notre Histoire</span>
+                    <h2 class="text-4xl font-black text-slate-900 mt-3 mb-6">Une Passion pour le Foncier Camerounais</h2>
+                    <div class="section-divider mb-8"></div>
+                    <p class="text-slate-600 leading-relaxed mb-5 text-lg">Fondee en 2012 a Yaounde, Cbomelly Immobilier est nee d'une vision claire : democratiser l'acces a la propriete fonciere au Cameroun tout en garantissant la securite juridique des transactions.</p>
+                    <p class="text-slate-600 leading-relaxed mb-5">Partant du constat que de nombreux Camerounais, en particulier ceux de la diaspora, etaient victimes d'arnaques foncieres, nous avons decide de creer une structure qui allie expertise juridique, transparence totale et accompagnement personnalise pour chaque client.</p>
+                    <p class="text-slate-600 leading-relaxed mb-8">Aujourd'hui, apres plus de 150 transactions reussies et des centaines de familles installees sur leurs propres terres, Cbomelly Immobilier est devenue une reference incontournable dans le secteur immobilier de la region centrale du Cameroun.</p>
+                    <div class="flex gap-8">
+                        <div class="text-center">
+                            <div class="text-4xl font-black text-gold">150+</div>
+                            <div class="text-sm text-slate-500 font-semibold mt-1">Transactions</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-black text-gold">12</div>
+                            <div class="text-sm text-slate-500 font-semibold mt-1">Annees</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-black text-gold">4</div>
+                            <div class="text-sm text-slate-500 font-semibold mt-1">Zones</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== MISSION & VISION ==================== -->
+    <section class="py-28 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="bg-white p-12 rounded-3xl shadow-sm border border-slate-100" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-gold/10 rounded-2xl flex items-center justify-center mb-8">
+                        <i class="fas fa-bullseye text-3xl text-gold"></i>
+                    </div>
+                    <h3 class="text-3xl font-black text-slate-900 mb-6">Notre Mission</h3>
+                    <div class="section-divider mb-6"></div>
+                    <p class="text-slate-600 leading-relaxed text-lg mb-4">Faciliter l'acces securise a la propriete fonciere pour tous les Camerounais, qu'ils resident au pays ou a l'etranger, en offrant un service transparent, professionnel et ethique.</p>
+                    <p class="text-slate-600 leading-relaxed">Nous nous engageons a eradiquer les arnaques foncieres en mettant a disposition de nos clients une expertise juridique solide et un accompagnement de bout en bout, de la recherche du terrain jusqu'a la signature definitive chez le notaire.</p>
+                </div>
+                <div class="bg-slate-900 p-12 rounded-3xl shadow-sm border border-slate-800" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-gold/20 rounded-2xl flex items-center justify-center mb-8">
+                        <i class="fas fa-eye text-3xl text-gold"></i>
+                    </div>
+                    <h3 class="text-3xl font-black text-white mb-6">Notre Vision</h3>
+                    <div class="section-divider mb-6 bg-gold"></div>
+                    <p class="text-slate-300 leading-relaxed text-lg mb-4">Devenir le leader de l'immobilier foncier au Cameroun, reconnu pour notre integrite, notre expertise et notre capacite a transformer les reves de propriete en realite concrete pour des milliers de familles.</p>
+                    <p class="text-slate-300 leading-relaxed">Nous aspirons a etendre notre presence dans toutes les regions du Cameroun et a devenir la reference incontestee pour les investisseurs locaux et internationaux souhaitant investir dans l'immobilier camerounais.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== NOS VALEURS ==================== -->
+    <section class="py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <span class="text-gold text-sm font-bold tracking-[0.25em] uppercase">Ce qui nous definit</span>
+                <h2 class="text-4xl md:text-5xl font-black text-slate-900 mt-4">Nos Valeurs Fondamentales</h2>
+                <div class="section-divider mx-auto mt-6"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="value-card bg-slate-50 p-10 rounded-3xl border border-slate-100 hover:border-gold/30 hover:shadow-xl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-gold/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-handshake text-2xl text-gold"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-slate-900 mb-3">Integrite</h3>
+                    <p class="text-slate-600 leading-relaxed">Nous agissons toujours avec honnetete et transparence. Chaque terrain est verifie, chaque document est authentique. Notre reputation est notre bien le plus precieux.</p>
+                </div>
+                <div class="value-card bg-slate-50 p-10 rounded-3xl border border-slate-100 hover:border-gold/30 hover:shadow-xl" data-aos="fade-up" data-aos-delay="150">
+                    <div class="w-14 h-14 bg-gold/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-user-shield text-2xl text-gold"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-slate-900 mb-3">Securite</h3>
+                    <p class="text-slate-600 leading-relaxed">La protection de nos clients est notre priorite absolue. Verification juridique rigoureuse, titres authentiques, absence de litige garantie.</p>
+                </div>
+                <div class="value-card bg-slate-50 p-10 rounded-3xl border border-slate-100 hover:border-gold/30 hover:shadow-xl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-gold/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-award text-2xl text-gold"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-slate-900 mb-3">Excellence</h3>
+                    <p class="text-slate-600 leading-relaxed">Nous visons l'excellence dans chaque aspect de notre travail : de la selection des terrains a la qualite de notre relation client.</p>
+                </div>
+                <div class="value-card bg-slate-50 p-10 rounded-3xl border border-slate-100 hover:border-gold/30 hover:shadow-xl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-gold/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-users text-2xl text-gold"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-slate-900 mb-3">Proximite</h3>
+                    <p class="text-slate-600 leading-relaxed">Chaque client est unique. Nous prenons le temps de comprendre vos besoins, vos contraintes et vos aspirations pour vous proposer la solution ideale.</p>
+                </div>
+                <div class="value-card bg-slate-50 p-10 rounded-3xl border border-slate-100 hover:border-gold/30 hover:shadow-xl" data-aos="fade-up" data-aos-delay="150">
+                    <div class="w-14 h-14 bg-gold/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-lightbulb text-2xl text-gold"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-slate-900 mb-3">Innovation</h3>
+                    <p class="text-slate-600 leading-relaxed">Nous adoptons les meilleures pratiques et technologies pour simplifier et securiser le processus d'acquisition fonciere au Cameroun.</p>
+                </div>
+                <div class="value-card bg-slate-50 p-10 rounded-3xl border border-slate-100 hover:border-gold/30 hover:shadow-xl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-gold/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-heart text-2xl text-gold"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-slate-900 mb-3">Engagement</h3>
+                    <p class="text-slate-600 leading-relaxed">Nous nous engageons pleinement dans chaque projet. Votre reussite est notre reussite. Nous restons a vos cotes bien apres la signature.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== EXPERTISE FONCIERE ==================== -->
+    <section class="py-28 bg-slate-900 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-gold/5 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gold/5 rounded-full blur-[120px]"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right">
+                    <span class="text-gold text-sm font-bold tracking-[0.25em] uppercase">Notre Savoir-Faire</span>
+                    <h2 class="text-4xl font-black text-white mt-3 mb-6">Expertise Fonciere Reconnue</h2>
+                    <div class="section-divider mb-8 bg-gold"></div>
+                    <p class="text-slate-300 leading-relaxed mb-6 text-lg">Notre equipe d'experts fonciers et juridiques possede une connaissance approfondie du droit foncier camerounais et des procedures administratives liees a l'acquisition de terrains.</p>
+                    <p class="text-slate-300 leading-relaxed mb-8">Nous maitrisons parfaitement les specificites de chaque zone : particularites cadastrales, contraintes urbanistiques, droits coutumiers et legislations en vigueur. Cette expertise nous permet de garantir a nos clients une acquisition 100% securisee.</p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-gold/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-gold"></i>
+                            </div>
+                            <span class="text-slate-200 font-semibold">Verification complete des titres fonciers</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-gold/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-gold"></i>
+                            </div>
+                            <span class="text-slate-200 font-semibold">Bornage geodesique officiel</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-gold/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-gold"></i>
+                            </div>
+                            <span class="text-slate-200 font-semibold">Recherche d'antériorite au conservateur</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-gold/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-gold"></i>
+                            </div>
+                            <span class="text-slate-200 font-semibold">Accompagnement notarial complet</span>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-left">
+                    <img src="images/terrain-background2.jpg" alt="Expertise fonciere Cbomelly" class="rounded-3xl shadow-2xl w-full h-[500px] object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== EQUIPE ==================== -->
+    <section class="py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <span class="text-gold text-sm font-bold tracking-[0.25em] uppercase">Notre Equipe</span>
+                <h2 class="text-4xl md:text-5xl font-black text-slate-900 mt-4">Les Experts Cbomelly</h2>
+                <div class="section-divider mx-auto mt-6"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="team-card group relative rounded-3xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <img src="images/terrain3.jpg" alt="Directeur Cbomelly" class="w-full h-80 object-cover">
+                    <div class="team-overlay absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent flex flex-col justify-end p-6">
+                        <h3 class="text-xl font-black text-white">Jean-Paul Nkono</h3>
+                        <p class="text-gold font-semibold">Directeur General</p>
+                        <p class="text-slate-300 text-sm mt-2">15 ans d'experience en immobilier foncier</p>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-slate-900 to-transparent group-hover:opacity-0 transition-opacity">
+                        <h3 class="text-xl font-black text-white">Jean-Paul Nkono</h3>
+                        <p class="text-gold font-semibold">Directeur General</p>
+                    </div>
+                </div>
+
+                <div class="team-card group relative rounded-3xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="150">
+                    <img src="images/terrain5.jpg" alt="Juriste Cbomelly" class="w-full h-80 object-cover">
+                    <div class="team-overlay absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent flex flex-col justify-end p-6">
+                        <h3 class="text-xl font-black text-white">Marie-Claire Etoa</h3>
+                        <p class="text-gold font-semibold">Responsable Juridique</p>
+                        <p class="text-slate-300 text-sm mt-2">Experte en droit foncier camerounais</p>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-slate-900 to-transparent group-hover:opacity-0 transition-opacity">
+                        <h3 class="text-xl font-black text-white">Marie-Claire Etoa</h3>
+                        <p class="text-gold font-semibold">Responsable Juridique</p>
+                    </div>
+                </div>
+
+                <div class="team-card group relative rounded-3xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/terrain8.jpeg" alt="Commercial Cbomelly" class="w-full h-80 object-cover">
+                    <div class="team-overlay absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent flex flex-col justify-end p-6">
+                        <h3 class="text-xl font-black text-white">Patrick Mengue</h3>
+                        <p class="text-gold font-semibold">Responsable Commercial</p>
+                        <p class="text-slate-300 text-sm mt-2">Specialiste des zones de Yaounde</p>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-slate-900 to-transparent group-hover:opacity-0 transition-opacity">
+                        <h3 class="text-xl font-black text-white">Patrick Mengue</h3>
+                        <p class="text-gold font-semibold">Responsable Commercial</p>
+                    </div>
+                </div>
+
+                <div class="team-card group relative rounded-3xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="250">
+                    <img src="images/terrain.webp" alt="Relation client Cbomelly" class="w-full h-80 object-cover">
+                    <div class="team-overlay absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent flex flex-col justify-end p-6">
+                        <h3 class="text-xl font-black text-white">Grace Ndzana</h3>
+                        <p class="text-gold font-semibold">Relation Client</p>
+                        <p class="text-slate-300 text-sm mt-2">Accompagnement personnalise diaspora</p>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-slate-900 to-transparent group-hover:opacity-0 transition-opacity">
+                        <h3 class="text-xl font-black text-white">Grace Ndzana</h3>
+                        <p class="text-gold font-semibold">Relation Client</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CHIFFRES CLES ==================== -->
+    <section class="py-28 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <span class="text-gold text-sm font-bold tracking-[0.25em] uppercase">En Chiffres</span>
+                <h2 class="text-4xl md:text-5xl font-black text-slate-900 mt-4">Notre Impact</h2>
+                <div class="section-divider mx-auto mt-6"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-100 text-center card-hover transition-all duration-500" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-gold/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-home text-2xl text-gold"></i>
+                    </div>
+                    <div class="text-5xl font-black text-gold mb-3 stat-number">150+</div>
+                    <div class="text-slate-600 font-semibold">Terrains Vendus</div>
+                </div>
+                <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-100 text-center card-hover transition-all duration-500" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="w-16 h-16 bg-gold/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-smile text-2xl text-gold"></i>
+                    </div>
+                    <div class="text-5xl font-black text-gold mb-3 stat-number">98%</div>
+                    <div class="text-slate-600 font-semibold">Clients Satisfaits</div>
+                </div>
+                <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-100 text-center card-hover transition-all duration-500" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-gold/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-globe-africa text-2xl text-gold"></i>
+                    </div>
+                    <div class="text-5xl font-black text-gold mb-3 stat-number">12</div>
+                    <div class="text-slate-600 font-semibold">Pays Desservis</div>
+                </div>
+                <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-100 text-center card-hover transition-all duration-500" data-aos="zoom-in" data-aos-delay="250">
+                    <div class="w-16 h-16 bg-gold/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-coins text-2xl text-gold"></i>
+                    </div>
+                    <div class="text-5xl font-black text-gold mb-3 stat-number">2.5B</div>
+                    <div class="text-slate-600 font-semibold">FCCA en Transactions</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CTA ==================== -->
+    <section class="py-20 bg-gold">
+        <div class="max-w-4xl mx-auto px-6 text-center" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-4">Rejoignez l'Aventure Cbomelly</h2>
+            <p class="text-slate-800 mb-8 text-lg leading-relaxed">Que vous soyez acheteur, vendeur ou investisseur, nous avons la solution adaptee a vos besoins fonciers.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="terrains.html" class="px-10 py-4 bg-slate-900 text-white font-black rounded-full hover:bg-slate-800 transition-all shadow-xl text-lg">Voir nos terrains</a>
+                <a href="contact.html" class="px-10 py-4 border-2 border-slate-900 text-slate-900 font-bold rounded-full hover:bg-slate-900 hover:text-white transition-all text-lg">Nous contacter</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-slate-900 text-white pt-20 pb-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 gold-gradient rounded-lg flex items-center justify-center">
+                            <span class="text-white font-black text-lg">C</span>
+                        </div>
+                        <div>
+                            <span class="text-xl font-black tracking-tight block">CBOMELLY</span>
+                            <span class="text-[10px] tracking-[0.3em] text-gold uppercase">Immobilier</span>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed mb-6">Votre partenaire de confiance dans l'acquisition de terrains viabilises et securises au Cameroun depuis 2012.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-slate-900 transition-all"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-slate-900 transition-all"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-slate-900 transition-all"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-slate-900 transition-all"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-black mb-6">Liens Rapides</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-slate-400 hover:text-gold transition-colors">Accueil</a></li>
+                        <li><a href="terrains.html" class="text-slate-400 hover:text-gold transition-colors">Nos Terrains</a></li>
+                        <li><a href="a-propos.html" class="text-slate-400 hover:text-gold transition-colors">A Propos</a></li>
+                        <li><a href="conseils.html" class="text-slate-400 hover:text-gold transition-colors">Conseils</a></li>
+                        <li><a href="contact.html" class="text-slate-400 hover:text-gold transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-black mb-6">Nos Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="terrains.html" class="text-slate-400 hover:text-gold transition-colors">Vente de Terrains</a></li>
+                        <li><a href="conseils.html" class="text-slate-400 hover:text-gold transition-colors">Conseil Juridique</a></li>
+                        <li><a href="conseils.html" class="text-slate-400 hover:text-gold transition-colors">Verification Fonciere</a></li>
+                        <li><a href="contact.html" class="text-slate-400 hover:text-gold transition-colors">Accompagnement</a></li>
+                        <li><a href="contact.html" class="text-slate-400 hover:text-gold transition-colors">Estimation Gratuite</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-black mb-6">Contactez-Nous</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt text-gold mt-1"></i>
+                            <span class="text-slate-400">Yaounde, Cameroun<br>Quartier administratif</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone-alt text-gold"></i>
+                            <a href="tel:+237677000000" class="text-slate-400 hover:text-gold transition-colors">+237 677 00 00 00</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-gold"></i>
+                            <a href="mailto:contact@cbomelly.com" class="text-slate-400 hover:text-gold transition-colors">contact@cbomelly.com</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-clock text-gold"></i>
+                            <span class="text-slate-400">Lun - Sam: 8h - 18h</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">&copy; 2024 Cbomelly Immobilier. Tous droits reserves.</p>
+                <div class="flex gap-6 text-sm text-slate-500">
+                    <a href="#" class="hover:text-gold transition-colors">Politique de confidentialite</a>
+                    <a href="#" class="hover:text-gold transition-colors">Mentions legales</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 100, easing: 'ease-out-cubic' });
+
+        const navbar = document.getElementById('mainNav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-scrolled', 'py-3');
+                navbar.classList.remove('py-5');
+            } else {
+                navbar.classList.remove('nav-scrolled', 'py-3');
+                navbar.classList.add('py-5');
+            }
+        });
+
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+    </script>
+</body>
+</html>
