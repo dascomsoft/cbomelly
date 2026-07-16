@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Decouvrez tous les services de Cbomelly Immobilier : terrains a vendre, maisons, immatriculation fonciere et lotissements au Cameroun.">
+    <title>Nos Services | Cbomelly Immobilier - Cameroun</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#D4AF37',
+                        'gold-dark': '#B8860B',
+                        'gold-light': '#E8C84A',
+                        blue: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                            950: '#172554',
+                        }
+                    },
+                    fontFamily: {
+                        nunito: ['Nunito', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Nunito', sans-serif; }
+        .blue-gradient { background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #2563eb 100%); }
+        .blue-gradient-light { background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); }
+        .blue-text-gradient { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-overlay { background: linear-gradient(to bottom, rgba(30, 58, 138, 0.9) 0%, rgba(30, 58, 138, 0.7) 50%, rgba(30, 58, 138, 1) 100%); }
+        .nav-scrolled { background: rgba(30, 58, 138, 0.95) !important; backdrop-filter: blur(20px); box-shadow: 0 4px 30px rgba(0,0,0,0.3); }
+        .card-hover:hover { transform: translateY(-10px); box-shadow: 0 30px 60px -12px rgba(30, 58, 138, 0.2); }
+        .btn-blue { background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%); transition: all 0.3s ease; }
+        .btn-blue:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4); }
+        .btn-outline-blue { border: 2px solid #2563eb; color: #2563eb; transition: all 0.3s ease; }
+        .btn-outline-blue:hover { background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%); color: white; transform: translateY(-2px); }
+        .section-divider { width: 80px; height: 4px; background: linear-gradient(90deg, #3b82f6, #1e40af); border-radius: 2px; }
+        .section-divider-white { width: 80px; height: 4px; background: linear-gradient(90deg, #93c5fd, #60a5fa); border-radius: 2px; }
+        .service-card { transition: all 0.5s ease; border: 1px solid rgba(30, 58, 138, 0.08); }
+        .service-card:hover { transform: translateY(-8px); box-shadow: 0 25px 50px -12px rgba(30, 58, 138, 0.15); border-color: rgba(37, 99, 235, 0.2); }
+        .image-zoom { overflow: hidden; }
+        .image-zoom img { transition: transform 0.7s ease; }
+        .image-zoom:hover img { transform: scale(1.1); }
+        .property-badge { position: absolute; top: 16px; left: 16px; z-index: 10; }
+        .property-price { position: absolute; bottom: 16px; right: 16px; z-index: 10; }
+        .process-line { position: absolute; top: 40px; left: 12.5%; right: 12.5%; height: 2px; background: linear-gradient(90deg, transparent, rgba(37,99,235,0.3), transparent); }
+        .tab-active { background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%); color: white; }
+        .tab-inactive { background: white; color: #1e3a8a; border: 2px solid #dbeafe; }
+        .tab-inactive:hover { border-color: #2563eb; color: #2563eb; }
+        .feature-icon { transition: all 0.3s ease; }
+        .feature-card:hover .feature-icon { transform: scale(1.1) rotate(-5deg); }
+        .wave-bottom { position: absolute; bottom: 0; left: 0; width: 100%; overflow: hidden; line-height: 0; }
+        .wave-bottom svg { position: relative; display: block; width: calc(100% + 1.3px); height: 80px; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        .animate-float { animation: float 3s ease-in-out infinite; }
+    </style>
+<base target="_blank">
+</head>
+<body class="bg-white text-slate-800 antialiased overflow-x-hidden">
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav id="mainNav" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 py-5">
+        <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 blue-gradient rounded-xl flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300">
+                    <span class="text-white font-black text-xl">C</span>
+                </div>
+                <div>
+                    <span class="text-2xl font-black tracking-tight text-white block leading-none">CBOMELLY</span>
+                    <span class="text-[10px] tracking-[0.35em] text-blue-300 font-bold uppercase">Immobilier</span>
+                </div>
+            </a>
+            <div class="hidden lg:flex items-center gap-10">
+                <a href="index.html" class="text-sm font-bold tracking-wide text-white/90 hover:text-blue-300 transition-colors uppercase relative group">
+                    Accueil<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="services.html" class="text-sm font-bold tracking-wide text-blue-300 uppercase relative">
+                    Nos Services<span class="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-400"></span>
+                </a>
+                <a href="terrains.html" class="text-sm font-bold tracking-wide text-white/90 hover:text-blue-300 transition-colors uppercase relative group">
+                    Nos Terrains<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="a-propos.html" class="text-sm font-bold tracking-wide text-white/90 hover:text-blue-300 transition-colors uppercase relative group">
+                    A Propos<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="conseils.html" class="text-sm font-bold tracking-wide text-white/90 hover:text-blue-300 transition-colors uppercase relative group">
+                    Conseils<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="contact.html" class="px-7 py-3 bg-white text-blue-900 text-sm font-black rounded-full hover:shadow-blue transition-all shadow-lg">
+                    Contact
+                </a>
+            </div>
+            <button id="mobileMenuBtn" class="lg:hidden text-white text-2xl p-2" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div id="mobileMenu" class="hidden lg:hidden bg-blue-900/98 backdrop-blur-xl border-t border-white/10">
+            <div class="px-6 py-6 flex flex-col gap-1">
+                <a href="index.html" class="text-white/90 hover:text-blue-300 hover:bg-white/5 py-3 px-4 rounded-xl transition-all font-semibold">Accueil</a>
+                <a href="services.html" class="text-blue-300 font-black py-3 px-4">Nos Services</a>
+                <a href="terrains.html" class="text-white/90 hover:text-blue-300 hover:bg-white/5 py-3 px-4 rounded-xl transition-all font-semibold">Nos Terrains</a>
+                <a href="a-propos.html" class="text-white/90 hover:text-blue-300 hover:bg-white/5 py-3 px-4 rounded-xl transition-all font-semibold">A Propos</a>
+                <a href="conseils.html" class="text-white/90 hover:text-blue-300 hover:bg-white/5 py-3 px-4 rounded-xl transition-all font-semibold">Conseils</a>
+                <a href="contact.html" class="text-blue-300 font-black py-3 px-4">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO SERVICES ==================== -->
+    <section class="relative min-h-[65vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="images/terrain-background3.jpeg" alt="Services Cbomelly Immobilier" class="w-full h-full object-cover">
+            <div class="hero-overlay absolute inset-0"></div>
+        </div>
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center pt-24" data-aos="fade-up">
+            <div class="inline-flex items-center gap-2 px-5 py-2 mb-8 border border-blue-400/40 rounded-full bg-blue-500/10 backdrop-blur-md">
+                <span class="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></span>
+                <span class="text-blue-300 text-xs font-bold tracking-[0.25em] uppercase">Notre Expertise a Votre Service</span>
+            </div>
+            <h1 class="text-5xl sm:text-6xl md:text-7xl font-black text-white leading-tight mb-6">
+                Nos Services<br><span class="blue-text-gradient" style="-webkit-text-fill-color: #93c5fd;">Immobiliers</span>
+            </h1>
+            <p class="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed mb-10">
+                De la vente de terrains viabilises a l'immatriculation fonciere, en passant par les lotissements et la vente de maisons, Cbomelly Immobilier vous accompagne dans tous vos projets immobiliers au Cameroun.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#terrains" class="px-8 py-3.5 bg-white text-blue-900 font-black rounded-full hover:shadow-xl transition-all text-sm">
+                    <i class="fas fa-map-marked-alt mr-2"></i> Terrains
+                </a>
+                <a href="#maisons" class="px-8 py-3.5 bg-white/10 backdrop-blur-md border border-white/30 text-white font-bold rounded-full hover:bg-white/20 transition-all text-sm">
+                    <i class="fas fa-home mr-2"></i> Maisons
+                </a>
+                <a href="#immatriculation" class="px-8 py-3.5 bg-white/10 backdrop-blur-md border border-white/30 text-white font-bold rounded-full hover:bg-white/20 transition-all text-sm">
+                    <i class="fas fa-file-contract mr-2"></i> Immatriculation
+                </a>
+                <a href="#lotissements" class="px-8 py-3.5 bg-white/10 backdrop-blur-md border border-white/30 text-white font-bold rounded-full hover:bg-white/20 transition-all text-sm">
+                    <i class="fas fa-th-large mr-2"></i> Lotissements
+                </a>
+            </div>
+        </div>
+        <div class="wave-bottom">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C57.1,118.92,156.86,74.08,321.39,56.44Z" fill="#ffffff"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- ==================== PRESENTATION DES SERVICES ==================== -->
+    <section class="py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <span class="text-blue-600 text-sm font-bold tracking-[0.25em] uppercase">Ce que nous proposons</span>
+                <h2 class="text-4xl md:text-5xl font-black text-blue-950 mt-4">Nos Domaines d'Expertise</h2>
+                <div class="section-divider mx-auto mt-6"></div>
+                <p class="text-slate-600 mt-6 max-w-2xl mx-auto text-lg leading-relaxed">Cbomelly Immobilier met son savoir-faire et son reseau a votre disposition pour tous vos projets immobiliers au Cameroun.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1: Terrains -->
+                <div class="service-card bg-white rounded-3xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-52 image-zoom">
+                        <img src="images/terrain1.jpg" alt="Vente de terrains" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg">
+                                <i class="fas fa-map-marked-alt text-xl text-blue-700"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-black text-blue-950 mb-3">Terrains a Vendre</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-5">Large selection de terrains viabilises et titres dans les meilleures zones de Yaounde et environs. Bornage geodesique et verification juridique inclus.</p>
+                        <a href="#terrains" class="inline-flex items-center gap-2 text-blue-600 font-bold text-sm hover:gap-4 transition-all">
+                            Decouvrir <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 2: Maisons -->
+                <div class="service-card bg-white rounded-3xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-52 image-zoom">
+                        <img src="images/terrain3.jpg" alt="Vente de maisons" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg">
+                                <i class="fas fa-home text-xl text-blue-700"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-black text-blue-950 mb-3">Maisons a Vendre</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-5">Maisons neuves et occupees selectionnees avec soin. De la villa familiale a l'immeuble de rapport, trouvez la propriete qui correspond a vos besoins.</p>
+                        <a href="#maisons" class="inline-flex items-center gap-2 text-blue-600 font-bold text-sm hover:gap-4 transition-all">
+                            Decouvrir <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 3: Immatriculation -->
+                <div class="service-card bg-white rounded-3xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative h-52 image-zoom">
+                        <img src="images/terrain-background2.jpg" alt="Immatriculation fonciere" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg">
+                                <i class="fas fa-file-signature text-xl text-blue-700"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-black text-blue-950 mb-3">Immatriculation Fonciere</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-5">Accompagnement complet pour l'obtention du titre foncier : bornage, etude cadastrale, dossier administratif et suivi aupres des services competents.</p>
+                        <a href="#immatriculation" class="inline-flex items-center gap-2 text-blue-600 font-bold text-sm hover:gap-4 transition-all">
+                            Decouvrir <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 4: Lotissements -->
+                <div class="service-card bg-white rounded-3xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative h-52 image-zoom">
+                        <img src="images/terrain5.jpg" alt="Projet de lotissement" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg">
+                                <i class="fas fa-th-large text-xl text-blue-700"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-black text-blue-950 mb-3">Projets de Lotissements</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-5">Conception et realisation de lotissements residentiels et commerciaux. Viabilisation complete, voies d'acces, bornage et commercialisation des parcelles.</p>
+                        <a href="#lotissements" class="inline-flex items-center gap-2 text-blue-600 font-bold text-sm hover:gap-4 transition-all">
+                            Decouvrir <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TERRAINS A VENDRE ==================== -->
+    <section id="terrains" class="py-28 bg-blue-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16" data-aos="fade-up">
+                <div>
+                    <span class="text-blue-600 text-sm font-bold tracking-[0.25em] uppercase">Service 01</span>
+                    <h2 class="text-4xl md:text-5xl font-black text-blue-950 mt-4">Terrains a Vendre</h2>
+                    <div class="section-divider mt-6"></div>
+                </div>
+                <a href="terrains.html" class="mt-6 md:mt-0 inline-flex items-center gap-3 text-blue-600 font-bold hover:gap-5 transition-all group">
+                    Voir tous les terrains <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+            <p class="text-slate-600 text-lg leading-relaxed mb-12 max-w-3xl" data-aos="fade-up">
+                Cbomelly Immobilier vous propose une selection rigoureuse de terrains viabilises et titres dans les zones les plus prisees de Yaounde et ses environs. Chaque terrain est verifie juridiquement et geodesiquement avant mise en vente.
+            </p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Terrain 1 -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-lg border border-blue-100 card-hover transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-64 image-zoom">
+                        <img src="images/terrain1.jpg" alt="Terrain Residentiel Soa" class="w-full h-full object-cover">
+                        <div class="property-badge px-4 py-1.5 bg-blue-600 text-white text-xs font-black rounded-full uppercase tracking-wide">Disponible</div>
+                        <div class="property-price px-5 py-2 bg-blue-900/85 backdrop-blur-md text-white font-black rounded-full text-sm">15 000 000 FCFA</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 text-slate-500 text-sm mb-3">
+                            <i class="fas fa-map-marker-alt text-blue-500"></i> Soa, Yaounde
+                        </div>
+                        <h3 class="text-2xl font-black text-blue-950 mb-3">Terrain Residentiel Soa</h3>
+                        <p class="text-slate-500 text-sm mb-4 leading-relaxed">Terrain plat et viabilise dans un quartier residentiel calme. Ideal pour construction de villa familiale.</p>
+                        <div class="flex items-center gap-6 text-sm text-slate-600 mb-6">
+                            <span class="flex items-center gap-2"><i class="fas fa-ruler-combined text-blue-500"></i> 500 m2</span>
+                            <span class="flex items-center gap-2"><i class="fas fa-road text-blue-500"></i> Voie pavee</span>
+                        </div>
+                        <a href="contact.html" class="block w-full py-3.5 text-center border-2 border-blue-600 text-blue-600 font-bold rounded-xl hover:bg-blue-600 hover:text-white transition-all duration-300">
+                            Voir les details
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Terrain 2 -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-lg border border-blue-100 card-hover transition-all duration-500" data-aos="fade-up" data-aos-delay="150">
+                    <div class="relative h-64 image-zoom">
+                        <img src="images/terrain2.jpg" alt="Parcelle Nkometou" class="w-full h-full object-cover">
+                        <div class="property-badge px-4 py-1.5 bg-emerald-500 text-white text-xs font-black rounded-full uppercase tracking-wide">Promo -15%</div>
+                        <div class="property-price px-5 py-2 bg-blue-900/85 backdrop-blur-md text-white font-black rounded-full text-sm">8 500 000 FCFA</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 text-slate-500 text-sm mb-3">
+                            <i class="fas fa-map-marker-alt text-blue-500"></i> Nkometou
+                        </div>
+                        <h3 class="text-2xl font-black text-blue-950 mb-3">Parcelle Nkometou Centre</h3>
+                        <p class="text-slate-500 text-sm mb-4 leading-relaxed">Parcelle bien situee a proximite du marche central. Titre foncier disponible, bornage effectue.</p>
+                        <div class="flex items-center gap-6 text-sm text-slate-600 mb-6">
+                            <span class="flex items-center gap-2"><i class="fas fa-ruler-combined text-blue-500"></i> 300 m2</span>
+                            <span class="flex items-center gap-2"><i class="fas fa-bolt text-blue-500"></i> EDF present</span>
+                        </div>
+                        <a href="contact.html" class="block w-full py-3.5 text-center border-2 border-blue-600 text-blue-600 font-bold rounded-xl hover:bg-blue-600 hover:text-white transition-all duration-300">
+                            Voir les details
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Terrain 3 -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-lg border border-blue-100 card-hover transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-64 image-zoom">
+                        <img src="images/terrain3.jpg" alt="Terrain Commercial Barriere" class="w-full h-full object-cover">
+                        <div class="property-badge px-4 py-1.5 bg-blue-600 text-white text-xs font-black rounded-full uppercase tracking-wide">Disponible</div>
+                        <div class="property-price px-5 py-2 bg-blue-900/85 backdrop-blur-md text-white font-black rounded-full text-sm">22 000 000 FCFA</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 text-slate-500 text-sm mb-3">
+                            <i class="fas fa-map-marker-alt text-blue-500"></i> Barriere, Yaounde
+                        </div>
+                        <h3 class="text-2xl font-black text-blue-950 mb-3">Terrain Commercial Barriere</h3>
+                        <p class="text-slate-500 text-sm mb-4 leading-relaxed">Excellente visibilite sur axe principal. Ideal pour commerce, bureau ou immeuble de rapport.</p>
+                        <div class="flex items-center gap-6 text-sm text-slate-600 mb-6">
+                            <span class="flex items-center gap-2"><i class="fas fa-ruler-combined text-blue-500"></i> 800 m2</span>
+                            <span class="flex items-center gap-2"><i class="fas fa-store text-blue-500"></i> Commercial</span>
+                        </div>
+                        <a href="contact.html" class="block w-full py-3.5 text-center border-2 border-blue-600 text-blue-600 font-bold rounded-xl hover:bg-blue-600 hover:text-white transition-all duration-300">
+                            Voir les details
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Terrain 4 -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-lg border border-blue-100 card-hover transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-64 image-zoom">
+                        <img src="images/terrain4.png" alt="Domaine Agricole Mbankomo" class="w-full h-full object-cover">
+                        <div class="property-badge px-4 py-1.5 bg-purple-500 text-white text-xs font-black rounded-full uppercase tracking-wide">Investissement</div>
+                        <div class="property-price px-5 py-2 bg-blue-900/85 backdrop-blur-md text-white font-black rounded-full text-sm">45 000 000 FCFA</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 text-slate-500 text-sm mb-3">
+                            <i class="fas fa-map-marker-alt text-blue-500"></i> Mbankomo
+                        </div>
+                        <h3 class="text-2xl font-black text-blue-950 mb-3">Domaine Agricole Mbankomo</h3>
+                        <p class="text-slate-500 text-sm mb-4 leading-relaxed">Vaste terrain plat avec acces a l'eau. Parfait pour projet agricole, elevage ou plantation.</p>
+                        <div class="flex items-center gap-6 text-sm text-slate-600 mb-6">
+                            <span class="flex items-center gap-2"><i class="fas fa-ruler-combined text-blue-500"></i> 2 500 m2</span>
+                            <span class="flex items-center gap-2"><i class="fas fa-seedling text-blue-500"></i> Agriculture</span>
+                        </div>
+                        <a href="contact.html" class="block w-full py-3.5 text-center border-2 border-blue-600 text-blue-600 font-bold rounded-xl hover:bg-blue-600 hover:text-white transition-all duration-300">
+                            Voir les details
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Terrain 5 -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-lg border border-blue-100 card-hover transition-all duration-500" data-aos="fade-up" data-aos-delay="150">
+                    <div class="relative h-64 image-zoom">
+                        <img src="images/terrain7.jpg" alt="Lotissement Nkometou Ouest" class="w-full h-full object-cover">
+                        <div class="property-badge px-4 py-1.5 bg-blue-600 text-white text-xs font-black rounded-full uppercase tracking-wide">Disponible</div>
+                        <div class="property-price px-5 py-2 bg-blue-900/85 backdrop-blur-md text-white font-black rounded-full text-sm">35 000 000 FCFA</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 text-slate-500 text-sm mb-3">
+                            <i class="fas fa-map-marker-alt text-blue-500"></i> Nkometou Ouest
+                        </div>
+                        <h3 class="text-2xl font-black text-blue-950 mb-3">Lotissement Nkometou Ouest</h3>
+                        <p class="text-slate-500 text-sm mb-4 leading-relaxed">Grand terrain dans lotissement planifie. Eau et electricite disponibles. Titre foncier pret.</p>
+                        <div class="flex items-center gap-6 text-sm text-slate-600 mb-6">
+                            <span class="flex items-center gap-2"><i class="fas fa-ruler-combined text-blue-500"></i> 1 200 m2</span>
+                            <span class="flex items-center gap-2"><i class="fas fa-users text-blue-500"></i> Lotissement</span>
+                        </div>
+                        <a href="contact.html" class="block w-full py-3.5 text-center border-2 border-blue-600 text-blue-600 font-bold rounded-xl hover:bg-blue-600 hover:text-white transition-all duration-300">
+                            Voir les details
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Terrain 6 -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-lg border border-blue-100 card-hover transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-64 image-zoom">
+                        <img src="images/terrain8.jpeg" alt="Terrain Barriere Premium" class="w-full h-full object-cover">
+                        <div class="property-badge px-4 py-1.5 bg-blue-500 text-white text-xs font-black rounded-full uppercase tracking-wide">Premium</div>
+                        <div class="property-price px-5 py-2 bg-blue-900/85 backdrop-blur-md text-white font-black rounded-full text-sm">55 000 000 FCFA</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 text-slate-500 text-sm mb-3">
+                            <i class="fas fa-map-marker-alt text-blue-500"></i> Barriere, centre commercial
+                        </div>
+                        <h3 class="text-2xl font-black text-blue-950 mb-3">Terrain Barriere Premium</h3>
+                        <p class="text-slate-500 text-sm mb-4 leading-relaxed">Emplacement premium en plein centre commercial. Tout viabilise, titre parfait.</p>
+                        <div class="flex items-center gap-6 text-sm text-slate-600 mb-6">
+                            <span class="flex items-center gap-2"><i class="fas fa-ruler-combined text-blue-500"></i> 1 500 m2</span>
+                            <span class="flex items-center gap-2"><i class="fas fa-store text-blue-500"></i> Commercial</span>
+                        </div>
+                        <a href="contact.html" class="block w-full py-3.5 text-center border-2 border-blue-600 text-blue-600 font-bold rounded-xl hover:bg-blue-600 hover:text-white transition-all duration-300">
+                            Voir les details
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== MAISONS A VENDRE ==================== -->
+    <section id="maisons" class="py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right">
+                    <span class="text-blue-600 text-sm font-bold tracking-[0.25em] uppercase">Service 02</span>
+                    <h2 class="text-4xl md:text-5xl font-black text-blue-950 mt-4 mb-6">Maisons a Vendre</h2>
+                    <div class="section-divider mb-8"></div>
+                    <p class="text-slate-600 text-lg leading-relaxed mb-6">
+                        En plus des terrains nus, Cbomelly Immobilier vous propose une selection de maisons et villas soigneusement choisies pour leur qualite de construction, leur emplacement et leur rapport qualite-prix.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed mb-8">
+                        Que vous recherchiez une villa familiale moderne, un immeuble de rapport ou une maison traditionnelle a renover, notre equipe vous accompagne dans la recherche et l'acquisition de votre bien immobilier.
+                    </p>
+
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center gap-4 p-4 bg-blue-50 rounded-xl">
+                            <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-home text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-black text-blue-950">Villas Familiales</h4>
+                                <p class="text-slate-500 text-sm">Maisons modernes de 3 a 5 chambres</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 bg-blue-50 rounded-xl">
+                            <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-building text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-black text-blue-950">Immeubles de Rapport</h4>
+                                <p class="text-slate-500 text-sm">Batiments multi-logements pour investissement locatif</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 bg-blue-50 rounded-xl">
+                            <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-tools text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-black text-blue-950">Maisons a Renover</h4>
+                                <p class="text-slate-500 text-sm">Opportunites a fort potentiel de plus-value</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="contact.html" class="inline-flex items-center gap-3 px-8 py-4 btn-blue text-white font-black rounded-full shadow-xl">
+                        Consulter nos maisons <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div data-aos="fade-left">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="images/terrain.webp" alt="Maison moderne Cameroun" class="rounded-2xl shadow-lg w-full h-56 object-cover">
+                        <img src="images/terrain10.jpeg" alt="Villa familiale Yaounde" class="rounded-2xl shadow-lg w-full h-56 object-cover mt-8">
+                        <img src="images/terrain7.jpeg" alt="Immeuble de rapport" class="rounded-2xl shadow-lg w-full h-56 object-cover">
+                        <img src="images/terrain-background.jpg" alt="Propriete residentielle" class="rounded-2xl shadow-lg w-full h-56 object-cover mt-8">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== IMMATRICULATION FONCIERE ==================== -->
+    <section id="immatriculation" class="py-28 bg-blue-950 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-400/10 rounded-full blur-[120px]"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right">
+                    <img src="images/terrain-background2.jpg" alt="Immatriculation fonciere Cameroun" class="rounded-3xl shadow-2xl w-full h-[500px] object-cover">
+                </div>
+                <div data-aos="fade-left">
+                    <span class="text-blue-400 text-sm font-bold tracking-[0.25em] uppercase">Service 03</span>
+                    <h2 class="text-4xl md:text-5xl font-black text-white mt-4 mb-6">Immatriculation Fonciere</h2>
+                    <div class="section-divider-white mb-8"></div>
+                    <p class="text-blue-100 text-lg leading-relaxed mb-6">
+                        Vous possedez un terrain sans titre foncier ? Cbomelly Immobilier vous accompagne dans toutes les demarches d'immatriculation pour securiser juridiquement votre propriete.
+                    </p>
+                    <p class="text-blue-200 leading-relaxed mb-8">
+                        Notre equipe d'experts fonciers et juridiques prend en charge l'ensemble du processus : bornage geodesique, etude cadastrale, constitution du dossier administratif, suivi aupres du Conservateur des Titres Immobiliers et obtention du titre definitif.
+                    </p>
+
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-blue-400"></i>
+                            </div>
+                            <span class="text-blue-100 font-semibold">Bornage geodesique par geometre expert</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-blue-400"></i>
+                            </div>
+                            <span class="text-blue-100 font-semibold">Constitution du dossier administratif complet</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-blue-400"></i>
+                            </div>
+                            <span class="text-blue-100 font-semibold">Suivi aupres des services competents</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-blue-400"></i>
+                            </div>
+                            <span class="text-blue-100 font-semibold">Obtention et remise du titre foncier definitif</span>
+                        </div>
+                    </div>
+
+                    <a href="contact.html" class="inline-flex items-center gap-3 px-8 py-4 bg-white text-blue-900 font-black rounded-full hover:shadow-xl transition-all shadow-lg">
+                        Demander un devis <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PROJETS DE LOTISSEMENTS ==================== -->
+    <section id="lotissements" class="py-28 bg-blue-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <span class="text-blue-600 text-sm font-bold tracking-[0.25em] uppercase">Service 04</span>
+                <h2 class="text-4xl md:text-5xl font-black text-blue-950 mt-4">Projets de Lotissements</h2>
+                <div class="section-divider mx-auto mt-6"></div>
+                <p class="text-slate-600 mt-6 max-w-2xl mx-auto text-lg leading-relaxed">Cbomelly Immobilier concoit et realise des lotissements residentiels et commerciaux de qualite, avec viabilisation complete et commercialisation des parcelles.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+                <div data-aos="fade-right">
+                    <img src="images/terrain5.jpg" alt="Projet lotissement Cbomelly" class="rounded-3xl shadow-2xl w-full h-[450px] object-cover">
+                </div>
+                <div data-aos="fade-left">
+                    <h3 class="text-3xl font-black text-blue-950 mb-6">Un Lotissement Cle en Main</h3>
+                    <p class="text-slate-600 text-lg leading-relaxed mb-6">
+                        Notre equipe prend en charge l'ensemble du projet de lotissement, de l'acquisition du terrain global a la commercialisation des parcelles individuelles.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed mb-8">
+                        Chaque lotissement est planifie avec soin : voies d'acces larges et bitumees, reseaux d'eau et d'electricite, espaces verts, bornage precis de chaque parcelle et titres fonciers individuels pour chaque lot.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="feature-card p-5 bg-white rounded-2xl border border-blue-100 text-center">
+                            <div class="feature-icon w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-road text-2xl text-blue-600"></i>
+                            </div>
+                            <h4 class="font-black text-blue-950 text-sm">Voies Bitumees</h4>
+                        </div>
+                        <div class="feature-card p-5 bg-white rounded-2xl border border-blue-100 text-center">
+                            <div class="feature-icon w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-tint text-2xl text-blue-600"></i>
+                            </div>
+                            <h4 class="font-black text-blue-950 text-sm">Eau Potable</h4>
+                        </div>
+                        <div class="feature-card p-5 bg-white rounded-2xl border border-blue-100 text-center">
+                            <div class="feature-icon w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-bolt text-2xl text-blue-600"></i>
+                            </div>
+                            <h4 class="font-black text-blue-950 text-sm">Electricite</h4>
+                        </div>
+                        <div class="feature-card p-5 bg-white rounded-2xl border border-blue-100 text-center">
+                            <div class="feature-icon w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-file-contract text-2xl text-blue-600"></i>
+                            </div>
+                            <h4 class="font-black text-blue-950 text-sm">Titres Foncier</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Processus lotissement -->
+            <div class="bg-white p-10 md:p-14 rounded-3xl shadow-lg border border-blue-100" data-aos="fade-up">
+                <h3 class="text-2xl font-black text-blue-950 text-center mb-12">Notre Processus de Lotissement</h3>
+                <div class="relative">
+                    <div class="process-line hidden md:block"></div>
+                    <div class="grid md:grid-cols-4 gap-8 relative z-10">
+                        <div class="text-center">
+                            <div class="w-20 h-20 mx-auto blue-gradient rounded-full flex items-center justify-center text-white font-black text-2xl mb-6 shadow-lg shadow-blue-500/30">01</div>
+                            <h4 class="text-lg font-black text-blue-950 mb-3">Etude de Faisabilite</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">Analyse du terrain, etude cadastrale et verification des contraintes urbanistiques.</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-20 h-20 mx-auto blue-gradient rounded-full flex items-center justify-center text-white font-black text-2xl mb-6 shadow-lg shadow-blue-500/30">02</div>
+                            <h4 class="text-lg font-black text-blue-950 mb-3">Conception & Plans</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">Elaboration des plans d'amenagement, decoupage des parcelles et viabilisation.</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-20 h-20 mx-auto blue-gradient rounded-full flex items-center justify-center text-white font-black text-2xl mb-6 shadow-lg shadow-blue-500/30">03</div>
+                            <h4 class="text-lg font-black text-blue-950 mb-3">Realisation</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">Travaux de viabilisation, bornage, construction des infrastructures communes.</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-20 h-20 mx-auto blue-gradient rounded-full flex items-center justify-center text-white font-black text-2xl mb-6 shadow-lg shadow-blue-500/30">04</div>
+                            <h4 class="text-lg font-black text-blue-950 mb-3">Commercialisation</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">Vente des parcelles avec accompagnement juridique et obtention des titres.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== POURQUOI NOUS CHOISIR ==================== -->
+    <section class="py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <span class="text-blue-600 text-sm font-bold tracking-[0.25em] uppercase">Notre Engagement</span>
+                <h2 class="text-4xl md:text-5xl font-black text-blue-950 mt-4">Pourquoi Choisir Cbomelly ?</h2>
+                <div class="section-divider mx-auto mt-6"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="feature-card p-10 bg-blue-50 rounded-3xl border border-blue-100 hover:border-blue-300 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20">
+                        <i class="fas fa-shield-alt text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-blue-950 mb-3">Securite Juridique</h3>
+                    <p class="text-slate-600 leading-relaxed">Tous nos biens sont verifies et titres. Aucun risque d'arnaque ou de litige foncier.</p>
+                </div>
+
+                <div class="feature-card p-10 bg-blue-50 rounded-3xl border border-blue-100 hover:border-blue-300 transition-all duration-300" data-aos="fade-up" data-aos-delay="150">
+                    <div class="feature-icon w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20">
+                        <i class="fas fa-user-tie text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-blue-950 mb-3">Expertise Reconnue</h3>
+                    <p class="text-slate-600 leading-relaxed">Plus de 12 ans d'experience dans l'immobilier foncier camerounais.</p>
+                </div>
+
+                <div class="feature-card p-10 bg-blue-50 rounded-3xl border border-blue-100 hover:border-blue-300 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20">
+                        <i class="fas fa-handshake text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-blue-950 mb-3">Accompagnement Total</h3>
+                    <p class="text-slate-600 leading-relaxed">De la premiere visite a la signature chez le notaire, nous sommes a vos cotes.</p>
+                </div>
+
+                <div class="feature-card p-10 bg-blue-50 rounded-3xl border border-blue-100 hover:border-blue-300 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20">
+                        <i class="fas fa-tags text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-blue-950 mb-3">Prix Competitifs</h3>
+                    <p class="text-slate-600 leading-relaxed">Negociation directe avec les proprietaires pour les meilleurs prix du marche.</p>
+                </div>
+
+                <div class="feature-card p-10 bg-blue-50 rounded-3xl border border-blue-100 hover:border-blue-300 transition-all duration-300" data-aos="fade-up" data-aos-delay="150">
+                    <div class="feature-icon w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20">
+                        <i class="fas fa-globe-africa text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-blue-950 mb-3">Service Diaspora</h3>
+                    <p class="text-slate-600 leading-relaxed">Accompagnement specialise pour les Camerounais vivant a l'etranger.</p>
+                </div>
+
+                <div class="feature-card p-10 bg-blue-50 rounded-3xl border border-blue-100 hover:border-blue-300 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20">
+                        <i class="fas fa-award text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-blue-950 mb-3">Transparence Totale</h3>
+                    <p class="text-slate-600 leading-relaxed">Prix affiches, documents verifiables, processus clair. Aucune surprise.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CTA ==================== -->
+    <section class="py-20 blue-gradient">
+        <div class="max-w-4xl mx-auto px-6 text-center" data-aos="zoom-in">
+            <h2 class="text-3xl md:text-4xl font-black text-white mb-4">Pret a Realiser Votre Projet Immobilier ?</h2>
+            <p class="text-blue-100 mb-10 text-lg leading-relaxed">Contactez-nous des aujourd'hui pour discuter de votre projet. Notre equipe d'experts est prete a vous accompagner.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="px-12 py-4 bg-white text-blue-900 font-black rounded-full hover:shadow-xl transition-all shadow-lg text-lg">
+                    Prendre rendez-vous
+                </a>
+                <a href="tel:+237677000000" class="px-12 py-4 border-2 border-white/40 text-white font-bold rounded-full hover:bg-white/10 transition-all text-lg flex items-center justify-center gap-3">
+                    <i class="fas fa-phone-alt"></i> +237 677 00 00 00
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-blue-950 text-white pt-20 pb-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 blue-gradient rounded-lg flex items-center justify-center">
+                            <span class="text-white font-black text-lg">C</span>
+                        </div>
+                        <div>
+                            <span class="text-xl font-black tracking-tight block">CBOMELLY</span>
+                            <span class="text-[10px] tracking-[0.3em] text-blue-400 uppercase">Immobilier</span>
+                        </div>
+                    </div>
+                    <p class="text-blue-200 leading-relaxed mb-6">Votre partenaire de confiance dans l'acquisition de terrains viabilises et securises au Cameroun depuis 2012.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-blue-500 hover:text-white transition-all"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-blue-500 hover:text-white transition-all"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-blue-500 hover:text-white transition-all"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-blue-500 hover:text-white transition-all"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-black mb-6">Liens Rapides</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-blue-200 hover:text-white transition-colors">Accueil</a></li>
+                        <li><a href="services.html" class="text-blue-200 hover:text-white transition-colors">Nos Services</a></li>
+                        <li><a href="terrains.html" class="text-blue-200 hover:text-white transition-colors">Nos Terrains</a></li>
+                        <li><a href="a-propos.html" class="text-blue-200 hover:text-white transition-colors">A Propos</a></li>
+                        <li><a href="conseils.html" class="text-blue-200 hover:text-white transition-colors">Conseils</a></li>
+                        <li><a href="contact.html" class="text-blue-200 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-black mb-6">Nos Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="services.html#terrains" class="text-blue-200 hover:text-white transition-colors">Vente de Terrains</a></li>
+                        <li><a href="services.html#maisons" class="text-blue-200 hover:text-white transition-colors">Vente de Maisons</a></li>
+                        <li><a href="services.html#immatriculation" class="text-blue-200 hover:text-white transition-colors">Immatriculation Fonciere</a></li>
+                        <li><a href="services.html#lotissements" class="text-blue-200 hover:text-white transition-colors">Projets de Lotissements</a></li>
+                        <li><a href="conseils.html" class="text-blue-200 hover:text-white transition-colors">Conseil Juridique</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-black mb-6">Contactez-Nous</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt text-blue-400 mt-1"></i>
+                            <span class="text-blue-200">Yaounde, Cameroun<br>Quartier administratif</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone-alt text-blue-400"></i>
+                            <a href="tel:+237677000000" class="text-blue-200 hover:text-white transition-colors">+237 677 00 00 00</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-blue-400"></i>
+                            <a href="mailto:contact@cbomelly.com" class="text-blue-200 hover:text-white transition-colors">contact@cbomelly.com</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-clock text-blue-400"></i>
+                            <span class="text-blue-200">Lun - Sam: 8h - 18h</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-blue-300 text-sm">&copy; 2024 Cbomelly Immobilier. Tous droits reserves.</p>
+                <div class="flex gap-6 text-sm text-blue-300">
+                    <a href="#" class="hover:text-white transition-colors">Politique de confidentialite</a>
+                    <a href="#" class="hover:text-white transition-colors">Mentions legales</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 100, easing: 'ease-out-cubic' });
+
+        const navbar = document.getElementById('mainNav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-scrolled', 'py-3');
+                navbar.classList.remove('py-5');
+            } else {
+                navbar.classList.remove('nav-scrolled', 'py-3');
+                navbar.classList.add('py-5');
+            }
+        });
+
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+                mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+            });
+        });
+    </script>
+</body>
+</html>
