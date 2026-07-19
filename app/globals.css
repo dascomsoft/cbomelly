@@ -1,27 +1,406 @@
+/* ============================================
+   IMPORT DE LA POLICE NUNITO DEPUIS GOOGLE FONTS
+   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
+
+/* ============================================
+   TAILWIND CSS DIRECTIVES
+   ============================================ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ============================================
+   CONFIGURATION GLOBALE DE NUNITO
+   ============================================ */
+@layer base {
+  html {
+    font-family: 'Nunito', sans-serif;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #ffffff;
+    background-color: #0f172a; /* slate-900 */
+    overflow-x: hidden;
+  }
+
+  /* Application forcée de Nunito sur tous les éléments */
+  *,
+  *::before,
+  *::after {
+    font-family: 'Nunito', sans-serif !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  h1 {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  p, span, a, button, input, textarea, select, label, li, td, th, div {
+    font-family: 'Nunito', sans-serif;
+  }
+
+  /* Poids de police utilitaires */
+  .font-nunito-light { font-weight: 300; }
+  .font-nunito-regular { font-weight: 400; }
+  .font-nunito-medium { font-weight: 500; }
+  .font-nunito-semibold { font-weight: 600; }
+  .font-nunito-bold { font-weight: 700; }
+  .font-nunito-extrabold { font-weight: 800; }
+  .font-nunito-black { font-weight: 900; }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ============================================
+   VARIABLES CSS GLOBALES
+   ============================================ */
+:root {
+  /* Couleurs principales */
+  --color-primary: #0f172a; /* slate-900 */
+  --color-primary-dark: #020617; /* slate-950 */
+  --color-primary-light: #1e293b; /* slate-800 */
+  
+  /* Couleur accent (Gold) */
+  --color-accent: #D4AF37;
+  --color-accent-light: #FFD700;
+  --color-accent-dark: #B8960F;
+  
+  /* Dégradés */
+  --gradient-gold: linear-gradient(135deg, #D4AF37, #FFD700, #D4AF37);
+  --gradient-dark: linear-gradient(135deg, #0f172a, #1e293b, #0f172a);
+  
+  /* Ombres */
+  --shadow-gold: 0 10px 30px rgba(212, 175, 55, 0.3);
+  --shadow-gold-lg: 0 20px 50px rgba(212, 175, 55, 0.4);
+  --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.3);
+  
+  /* Bordures */
+  --border-gold: 2px solid #D4AF37;
+  --border-gold-light: 1px solid rgba(212, 175, 55, 0.3);
+  
+  /* Transitions */
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* ============================================
+   ANIMATIONS GLOBALES
+   ============================================ */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(-50%, -50%) translateY(0px); }
+  50% { transform: translate(-50%, -50%) translateY(-10px); }
+}
+
+@keyframes ping-slow {
+  0% { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-200%); }
+  100% { transform: translateX(200%); }
+}
+
+@keyframes pulse-gold {
+  0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
+  70% { box-shadow: 0 0 0 20px rgba(212, 175, 55, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* Classes d'animation réutilisables */
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 3s ease-in-out 1s infinite;
+}
+
+.animate-ping-slow {
+  animation: ping-slow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+.animate-pulse-gold {
+  animation: pulse-gold 2s infinite;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* ============================================
+   COMPOSANTS RÉUTILISABLES
+   ============================================ */
+@layer components {
+  /* Boutons */
+  .btn-primary {
+    background: var(--gradient-gold);
+    color: var(--color-primary);
+    font-weight: 700;
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+    transition: var(--transition-bounce);
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+    box-shadow: var(--shadow-gold);
+  }
+
+  .btn-primary:hover {
+    background: linear-gradient(135deg, #FFD700, #D4AF37);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-gold-lg);
+  }
+
+  .btn-outline {
+    border: var(--border-gold);
+    color: var(--color-accent);
+    font-weight: 700;
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+    transition: var(--transition-bounce);
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    background: transparent;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+  }
+
+  .btn-outline:hover {
+    background: var(--color-accent);
+    color: var(--color-primary);
+    box-shadow: var(--shadow-gold);
+  }
+
+  .btn-sm {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  .btn-lg {
+    padding: 1.25rem 2.5rem;
+    font-size: 1.125rem;
+  }
+
+  /* Cartes */
+  .card {
+    background: rgba(30, 41, 59, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    padding: 2rem;
+    border: 1px solid rgba(51, 65, 85, 0.5);
+    transition: var(--transition-bounce);
+  }
+
+  .card-hover:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-card);
+    border-color: var(--color-accent);
+  }
+
+  /* Sections */
+  .section-padding {
+    padding: 5rem 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-padding {
+      padding: 6rem 2rem;
+    }
+  }
+
+  .section-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .section-title {
+      font-size: 3rem;
+    }
+  }
+
+  .section-divider {
+    width: 6rem;
+    height: 0.25rem;
+    background: var(--gradient-gold);
+    margin: 0 auto 1.5rem;
+    border-radius: 9999px;
+  }
+
+  /* Badges */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .badge-gold {
+    background: rgba(212, 175, 55, 0.2);
+    color: var(--color-accent-light);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+  }
+
+  .badge-primary {
+    background: rgba(15, 23, 42, 0.8);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  /* Effets de verre */
+  .glass {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-light {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Textes */
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gold {
+    color: var(--color-accent);
+  }
+
+  .text-gold-light {
+    color: var(--color-accent-light);
+  }
+}
+
+/* ============================================
+   SCROLLBAR PERSONNALISÉE
+   ============================================ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #D4AF37, #FFD700);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #FFD700, #D4AF37);
+}
+
+/* ============================================
+   SÉLECTION DE TEXTE
+   ============================================ */
+::selection {
+  background: rgba(212, 175, 55, 0.3);
+  color: #FFD700;
+}
+
+::-moz-selection {
+  background: rgba(212, 175, 55, 0.3);
+  color: #FFD700;
+}
+
+/* ============================================
+   ACCESSIBILITÉ - FOCUS STYLES
+   ============================================ */
+:focus-visible {
+  outline: 2px solid #D4AF37;
+  outline-offset: 2px;
+}
+
+/* ============================================
+   UTILITAIRES RESPONSIVE
+   ============================================ */
+@media (max-width: 640px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 641px) {
+  .hide-desktop {
+    display: none !important;
+  }
+}
+
+/* ============================================
+   IMPRESSION
+   ============================================ */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  
+  .no-print {
+    display: none !important;
   }
 }
