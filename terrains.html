@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Decouvrez nos terrains disponibles a Soa, Nkometou, Barriere et Mbankomo. Terrains viabilises et securises au Cameroun.">
+    <title>Nos Terrains | Cbomelly Immobilier - Cameroun</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#D4AF37',
+                        'gold-dark': '#B8860B',
+                        'gold-light': '#E8C84A',
+                    },
+                    fontFamily: {
+                        nunito: ['Nunito', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Nunito', sans-serif; }
+        .gold-gradient { background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); }
+        .gold-text-gradient { background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-overlay { background: linear-gradient(to bottom, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.6) 50%, rgba(15, 23, 42, 1) 100%); }
+        .nav-scrolled { background: rgba(15, 23, 42, 0.95) !important; backdrop-filter: blur(20px); box-shadow: 0 4px 30px rgba(0,0,0,0.3); }
+        .card-hover:hover { transform: translateY(-8px); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15); }
+        .btn-gold { background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); transition: all 0.3s ease; }
+        .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4); }
+        .section-divider { width: 80px; height: 4px; background: linear-gradient(90deg, #D4AF37, #B8860B); border-radius: 2px; }
+        .property-badge { position: absolute; top: 16px; left: 16px; z-index: 10; }
+        .property-price { position: absolute; bottom: 16px; right: 16px; z-index: 10; }
+        .image-zoom { overflow: hidden; }
+        .image-zoom img { transition: transform 0.7s ease; }
+        .image-zoom:hover img { transform: scale(1.1); }
+        .filter-active { background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); color: #0f172a; }
+        .zone-card:hover .zone-overlay { opacity: 1; }
+        .zone-overlay { opacity: 0; transition: opacity 0.4s ease; }
+    </style>
+<base target="_blank">
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased overflow-x-hidden">
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav id="mainNav" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 py-5">
+        <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 gold-gradient rounded-xl flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300">
+                    <span class="text-white font-black text-xl">C</span>
+                </div>
+                <div>
+                    <span class="text-2xl font-black tracking-tight text-white block leading-none">CBOMELLY</span>
+                    <span class="text-[10px] tracking-[0.35em] text-gold font-bold uppercase">Immobilier</span>
+                </div>
+            </a>
+            <div class="hidden lg:flex items-center gap-10">
+                <a href="index.html" class="text-sm font-bold tracking-wide text-white/90 hover:text-gold transition-colors uppercase relative group">
+                    Accueil<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="terrains.html" class="text-sm font-bold tracking-wide text-gold uppercase relative">
+                    Nos Terrains<span class="absolute -bottom-1 left-0 w-full h-0.5 bg-gold"></span>
+                </a>
+                <a href="a-propos.html" class="text-sm font-bold tracking-wide text-white/90 hover:text-gold transition-colors uppercase relative group">
+                    A Propos<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="conseils.html" class="text-sm font-bold tracking-wide text-white/90 hover:text-gold transition-colors uppercase relative group">
+                    Conseils<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="contact.html" class="px-7 py-3 gold-gradient text-slate-900 text-sm font-black rounded-full hover:shadow-gold transition-all shadow-lg">Contact</a>
+            </div>
+            <button id="mobileMenuBtn" class="lg:hidden text-white text-2xl p-2" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div id="mobileMenu" class="hidden lg:hidden bg-slate-900/98 backdrop-blur-xl border-t border-white/10">
+            <div class="px-6 py-6 flex flex-col gap-1">
+                <a href="index.html" class="text-white/90 hover:text-gold hover:bg-white/5 py-3 px-4 rounded-xl transition-all font-semibold">Accueil</a>
+                <a href="terrains.html" class="text-gold font-black py-3 px-4">Nos Terrains</a>
+                <a href="a-propos.html" class="text-white/90 hover:text-gold hover:bg-white/5 py-3 px-4 rounded-xl transition-all font-semibold">A Propos</a>
+                <a href="conseils.html" class="text-white/90 hover:text-gold hover:bg-white/5 py-3 px-4 rounded-xl transition-all font-semibold">Conseils</a>
+                <a href="contact.html" class="text-gold font-black py-3 px-4">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO TERRAINS ==================== -->
+    <section class="relative min-h-[55vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="images/terrain-background3.jpeg" alt="Terrains disponibles au Cameroun" class="w-full h-full object-cover">
+            <div class="hero-overlay absolute inset-0"></div>
+        </div>
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center pt-24" data-aos="fade-up">
+            <span class="text-gold text-sm font-bold tracking-[0.25em] uppercase">Notre Catalogue</span>
+            <h1 class="text-5xl md:text-6xl font-black text-white mt-4 mb-6">Nos Terrains Disponibles</h1>
+            <p class="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">Decouvrez notre selection de terrains viabilises dans les meilleures zones de Yaounde et ses environs. Chaque terrain est verifie et securise juridiquement.</p>
+        </div>
+    </section>
+
+    <!-- ==================== FILTRES DE RECHERCHE ==================== -->
+    <section class="py-10 bg-white border-b border-slate-100 sticky top-0 z-40 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-wrap gap-3 items-center justify-center" data-aos="fade-up">
+                <div class="relative">
+                    <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                    <input type="text" id="searchInput" placeholder="Rechercher un terrain..." class="pl-12 pr-6 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 w-56 lg:w-72 transition-all text-sm">
+                </div>
+                <select id="zoneFilter" class="px-5 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 cursor-pointer text-sm text-slate-600">
+                    <option value="all">Toutes les zones</option>
+                    <option value="soa">Soa</option>
+                    <option value="nkometou">Nkometou</option>
+                    <option value="barriere">Barriere</option>
+                    <option value="mbankomo">Mbankomo</option>
+                </select>
+                <select id="prixFilter" class="px-5 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 cursor-pointer text-sm text-slate-600">
+                    <option value="all">Tous les prix</option>
+                    <option value="0-10">Moins de 10M FCFA</option>
+                    <option value="10-20">10M - 20M FCFA</option>
+                    <option value="20-50">20M - 50M FCFA</option>
+                    <option value="50+">Plus de 50M FCFA</option>
+                </select>
+                <select id="surfaceFilter" class="px-5 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 cursor-pointer text-sm text-slate-600">
+                    <option value="all">Toutes superficies</option>
+                    <option value="0-300">Moins de 300 m2</option>
+                    <option value="300-500">300 - 500 m2</option>
+                    <option value="500-1000">500 - 1000 m2</option>
+                    <option value="1000+">Plus de 1000 m2</option>
+                </select>
+                <button onclick="resetFilters()" class="px-6 py-3 border-2 border-slate-200 text-slate-600 font-semibold rounded-xl hover:border-gold hover:text-gold transition-all text-sm">
+                    <i class="fas fa-undo mr-2"></i>Reinitialiser
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== GRILLE DES TERRAINS ==================== -->
+    <section class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div id="terrainsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Terrain 1 -->
+                <div class="terrain-card group bg-white rounded-3xl overflow-hidden shadow-lg border border-slate-100 card-hover transition-all duration-500" data-zone="soa" data-prix="15" data-surface="500" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-64 image-zoom">
+                        <img src="images/terrain1.jpg" alt="Terrain Residentiel Soa" class="w-full h-full object-cover">
+                        <div class="property-badge px-4 py-1.5 bg-gold text-slate-900 text-xs font-black rounded-full uppercase tracking-wide">Disponible</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-2xl font-black text-gold">15 000 000 <span class="text-sm text-slate-500 font-normal">FCFA</span></span>
+                        </div>
+                        <h3 class="text-xl font-black text-slate-900 mb-2">Terrain Residentiel Premium Soa</h3>
+                        <div class="flex items-center gap-2 text-slate-500 text-sm mb-4">
+                            <i class="fas fa-map-marker-alt text-gold"></i> Soa, Yaounde - Quartier administratif
+                        </div>
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <div class="flex items-center gap-2 text-sm text-slate-600 bg-slate-50 px-3 py-2.5 rounded-lg">
+                                <i class="fas fa-ruler-combined text-gold"></i> 500 m2
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-600 bg-slate-50 px-3 py-2.5 rounded-lg">
+                                <i class="fas fa-road text-gold"></i> Voie pavee
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-600 bg-slate-50 px-3 py-2.5 rounded-lg">
+                                <i class="fas fa-bolt text-gold"></i> EDF present
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-600 bg-slate-50 px-3 py-2.5 rounded-lg">
+                                <i class="fas fa-tint text-gold"></i> Eau potable
+                            </div>
+                        </div>
+                        <a href="contact.html" class="block w-full py-3.5 text-center bg-slate-900 text-white font-bold rounded-xl hover:bg-gold hover:text-slate-900 transition-all duration-300">Voir les details</a>
+                    </div>
+                </div>
+
+                <!-- Terrain 2 -->
+                <div class="terrain-card group bg-white rounded-3xl overflow-hidden shadow-lg border border-slate-100 card-hover transition-all duration-500" data-zone="nkometou" data-prix="8.5" data-surface="300" data-aos="fade-up" data-aos-delay="150">
+                    <div class="relative h-64 image-zoom">
+                        <img src="images/terrain2.jpg" alt="Parcelle Nkometou Centre" class="w-full h-full object-cover">
+                        <div class="property-badge px-4 py-1.5 bg-emerald-500 text-white text-xs font-black rounded-full uppercase tracking-wide">Promo -15%</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-2xl font-black text-gold">8 500 000 <span class="text-sm text-slate-500 font-normal">FCFA</span></span>
+                            <span class="text-sm text-slate-400 line-through">10 000 000 FCFA</span>
+                        </div>
+                        <h3 class="text-xl font-black text-slate-900 mb-2">Parcelle Nkometou Centre</h3>
+                        <div class="flex items-center gap-2 text-slate-500 text-sm mb-4">
+                            <i class="fas fa-map-marker-alt text-gold"></i> Nkometou, pres du marche
+                        </div>
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <div class="flex items-center gap-2 text-sm text-slate-600 bg-slate-50 px-3 py-2.5 rounded-lg">
+                                <i class="fas fa-ruler-combined text-gold"></i> 300 m2
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-600 bg-slate-50 px-3 py-2.5 rounded-lg">
+                                <i class="fas fa-road text-gold"></i> Piste laterite
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-600 bg-slate-50 px-3 py-2.5 rounded-lg">
+                                <i class="fas fa-bolt text-gold"></i> EDF a proximite
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-600 bg-slate-50 px-3 py-2.5 rounded-lg">
+                                <i class="fas fa-home text-gold"></i> Habitation
+                            </div>
+                        </div>
+                        <a href="contact.html" class="block w-full py-3.5 text-center bg-slate-900 text-white font-bold rounded-xl hover:bg-gold hover:text-slate-900 transition-all duration-300">Voir les details</a>
+                    </div>
+                </div>
+
+                <!-- Terrain 3 -->
+                <div class="terrain-card group bg-white rounded-3xl overflow-hidden shadow-lg border border-slate-100 card-hover transition-all duration-500" data-zone="barriere" data-prix="22" data-surface="800" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-64 image-zoom">
+                        <img src="images/terrain3.jpg" alt="Terrain Commercial Barriere" class="w-full h-full object-cover">
+                        <div class="property-badge px-4 py-1.5 bg-gold text-slate-900 text-xs font-black rounded-full uppercase tracking-wide">Disponible</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-2xl font-black text-gold">22 000 000 <span class="text-sm text-slate-500 font-normal">FCFA</span></span>
+                        </div>
+                        <h3 class="text-xl font-black text-slate-900 mb-2">Terrain Commercial Barriere</h3>
+                        <div class="flex items-center gap-2 text-slate-500 text-sm mb-4">
+                            <i class="fas fa-map-marker-alt text-gold"></i> Barriere, axe principal
+                        </div>
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <div class="flex items-center gap-2 text-sm text-slate-600 bg-slate-50 px-3 py-2.5 rounded-lg">
+                                <i class="fas fa-ruler-combined text-gold"></i> 800 m2
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-600 bg-slate-50 px-3 py-2.5 rounded-lg">
+                                <i class="fas fa-store text-gold"></i> Commercial
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-600 bg-slate-50 px-3 py-2.5 rounded-lg">
+                                <i class="fas fa-bolt text-gold"></i> EDF + Eau
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-600 bg-slate-50 px-3 py-2.5 rounded-lg">
+                                <i class="fas fa-car text-gold"></i> Parking
+                            </div>
+                        </div>
+                        <a href="contact.html" class="block w-full py-3.5 text-center bg-slate-900 text-white font-bold rounded-xl hover:bg-gold hover:text-slate-900 transition-all duration-300">Voir les details</a>
+                    </div>
+                </div>
+
+                <!-- Terrain 4 -->
+                <div class="terrain-card group bg-white rounded-3xl overflow-hidden shadow-lg border border-slate-100 card-hover transition-all duration-500" data-zone="mbankomo" data-prix="45" data-surface="2500" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-64 image-zoom">
+                        <img src="images/terrain4.png" alt="Domaine Agricole Mbankomo" class="w-full h-full object-cover">
+                        <div class="property-badge px-4 py-1.5 bg-purple-500 text-white text-xs font-black rounded-full uppercase tracking-wide">Investissement</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-2xl font-black text-gold">45 000 000 <span class="text-sm text-slate-500 font-normal">FCFA</span></span>
+                        </div>
+                        <h3 class="text-xl font-black text-slate-900 mb-2">Domaine Agricole Mbankomo</h3>
+                        <div class="flex items-center gap-2 text-slate-500 text-sm mb-4">
+                            <i class="fas fa-map-marker-alt text-gold"></i> Mbankomo, zone rurale
+                        </div>
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <div class="flex items-center gap-2 text-sm text-slate-600 bg-slate-50 px-3 py-2.5 rounded-lg">
+                                <i class="fas fa-ruler-combined text-gold"></i> 2 500 m2
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-600 bg-slate-50 px-3 py-2.5 rounded-lg">
+                                <i class="fas fa-seedling text-gold"></i> Agriculture
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-600 bg-slate-50 px-3 py-2.5 rounded-lg">
+                                <i class="fas fa-water text-gold"></i> Source proche
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-600 bg-slate-50 px-3 py-2.5 rounded-lg">
+                                <i class="fas fa-expand text-gold"></i> Extensible
+                            </div>
+                        </div>
+                        <a href="contact.html" class="block w-full py-3.5 text-center bg-slate-900 text-white font-bold rounded-xl hover:bg-gold hover:text-slate-900 transition-all duration-300">Voir les details</a>
+                    </div>
+                </div>
+
+                <!-- Terrain 5 -->
+                <div class="terrain-card group bg-white rounded-3xl overflow-hidden shadow-lg border border-slate-100 card-hover transition-all duration-500" data-zone="soa" data-prix="12" data-surface="400" data-aos="fade-up" data-aos-delay="150">
+                    <div class="relative h-64 image-zoom">
+                        <img src="images/terrain5.jpg" alt="Terrain Soa Extension" class="w-full h-full object-cover">
+                        <div class="property-badge px-4 py-1.5 bg-red-500 text-white text-xs font-black rounded-full uppercase tracking-wide">Vente Urgente</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-2xl font-black text-gold">12 000 000 <span class="text-sm text-slate-500 font-normal">FCFA</span></span>
+                        </div>
+                        <h3 class="text-xl font-black text-slate-900 mb-2">Terrain Soa Extension</h3>
+                        <div class="flex items-center gap-2 text-slate-500 text-sm mb-4">
+                            <i class="fas fa-map-marker-alt text-gold"></i> Soa, nouveau quartier
+                        </div>
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <div class="flex items-center gap-2 text-sm text-slate-600 bg-slate-50 px-3 py-2.5 rounded-lg">
+                                <i class="fas fa-ruler-combined text-gold"></i> 400 m2
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-600 bg-slate-50 px-3 py-2.5 rounded-lg">
+                                <i class="fas fa-road text-gold"></i> Voie en projet
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-600 bg-slate-50 px-3 py-2.5 rounded-lg">
+                                <i class="fas fa-chart-line text-gold"></i> Plus-value
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-600 bg-slate-50 px-3 py-2.5 rounded-lg">
+                                <i class="fas fa-home text-gold"></i> Residentiel
+                            </div>
+                        </div>
+                        <a href="contact.html" class="block w-full py-3.5 text-center bg-slate-900 text-white font-bold rounded-xl hover:bg-gold hover:text-slate-900 transition-all duration-300">Voir les details</a>
+                    </div>
+                </div>
+
+                <!-- Terrain 6 -->
+                <div class="terrain-card group bg-white rounded-3xl overflow-hidden shadow-lg border border-slate-100 card-hover transition-all duration-500" data-zone="nkometou" data-prix="35" data-surface="1200" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-64 image-zoom">
+                        <img src="images/terrain7.jpg" alt="Lotissement Nkometou Ouest" class="w-full h-full object-cover">
+                        <div class="property-badge px-4 py-1.5 bg-gold text-slate-900 text-xs font-black rounded-full uppercase tracking-wide">Disponible</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-2xl font-black text-gold">35 000 000 <span class="text-sm text-slate-500 font-normal">FCFA</span></span>
+                        </div>
+                        <h3 class="text-xl font-black text-slate-900 mb-2">Lotissement Nkometou Ouest</h3>
+                        <div class="flex items-center gap-2 text-slate-500 text-sm mb-4">
+                            <i class="fas fa-map-marker-alt text-gold"></i> Nkometou Ouest
+                        </div>
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <div class="flex items-center gap-2 text-sm text-slate-600 bg-slate-50 px-3 py-2.5 rounded-lg">
+                                <i class="fas fa-ruler-combined text-gold"></i> 1 200 m2
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-600 bg-slate-50 px-3 py-2.5 rounded-lg">
+                                <i class="fas fa-users text-gold"></i> Lotissement
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-600 bg-slate-50 px-3 py-2.5 rounded-lg">
+                                <i class="fas fa-bolt text-gold"></i> EDF + Eau
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-600 bg-slate-50 px-3 py-2.5 rounded-lg">
+                                <i class="fas fa-file-contract text-gold"></i> Titre OK
+                            </div>
+                        </div>
+                        <a href="contact.html" class="block w-full py-3.5 text-center bg-slate-900 text-white font-bold rounded-xl hover:bg-gold hover:text-slate-900 transition-all duration-300">Voir les details</a>
+                    </div>
+                </div>
+
+                <!-- Terrain 7 -->
+                <div class="terrain-card group bg-white rounded-3xl overflow-hidden shadow-lg border border-slate-100 card-hover transition-all duration-500" data-zone="barriere" data-prix="55" data-surface="1500" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-64 image-zoom">
+                        <img src="images/terrain8.jpeg" alt="Terrain Barriere Premium" class="w-full h-full object-cover">
+                        <div class="property-badge px-4 py-1.5 bg-blue-500 text-white text-xs font-black rounded-full uppercase tracking-wide">Premium</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-2xl font-black text-gold">55 000 000 <span class="text-sm text-slate-500 font-normal">FCFA</span></span>
+                        </div>
+                        <h3 class="text-xl font-black text-slate-900 mb-2">Terrain Barriere Premium</h3>
+                        <div class="flex items-center gap-2 text-slate-500 text-sm mb-4">
+                            <i class="fas fa-map-marker-alt text-gold"></i> Barriere, centre commercial
+                        </div>
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <div class="flex items-center gap-2 text-sm text-slate-600 bg-slate-50 px-3 py-2.5 rounded-lg">
+                                <i class="fas fa-ruler-combined text-gold"></i> 1 500 m2
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-600 bg-slate-50 px-3 py-2.5 rounded-lg">
+                                <i class="fas fa-store text-gold"></i> Commercial
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-600 bg-slate-50 px-3 py-2.5 rounded-lg">
+                                <i class="fas fa-bolt text-gold"></i> Tout viabilise
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-600 bg-slate-50 px-3 py-2.5 rounded-lg">
+                                <i class="fas fa-file-contract text-gold"></i> Titre parfait
+                            </div>
+                        </div>
+                        <a href="contact.html" class="block w-full py-3.5 text-center bg-slate-900 text-white font-bold rounded-xl hover:bg-gold hover:text-slate-900 transition-all duration-300">Voir les details</a>
+                    </div>
+                </div>
+
+                <!-- Terrain 8 -->
+                <div class="terrain-card group bg-white rounded-3xl overflow-hidden shadow-lg border border-slate-100 card-hover transition-all duration-500" data-zone="mbankomo" data-prix="28" data-surface="2000" data-aos="fade-up" data-aos-delay="150">
+                    <div class="relative h-64 image-zoom">
+                        <img src="images/terrain7.jpeg" alt="Terrain Mbankomo Residence" class="w-full h-full object-cover">
+                        <div class="property-badge px-4 py-1.5 bg-gold text-slate-900 text-xs font-black rounded-full uppercase tracking-wide">Disponible</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-2xl font-black text-gold">28 000 000 <span class="text-sm text-slate-500 font-normal">FCFA</span></span>
+                        </div>
+                        <h3 class="text-xl font-black text-slate-900 mb-2">Terrain Mbankomo Residence</h3>
+                        <div class="flex items-center gap-2 text-slate-500 text-sm mb-4">
+                            <i class="fas fa-map-marker-alt text-gold"></i> Mbankomo, zone residentielle
+                        </div>
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <div class="flex items-center gap-2 text-sm text-slate-600 bg-slate-50 px-3 py-2.5 rounded-lg">
+                                <i class="fas fa-ruler-combined text-gold"></i> 2 000 m2
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-600 bg-slate-50 px-3 py-2.5 rounded-lg">
+                                <i class="fas fa-home text-gold"></i> Residence
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-600 bg-slate-50 px-3 py-2.5 rounded-lg">
+                                <i class="fas fa-tree text-gold"></i> Nature
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-600 bg-slate-50 px-3 py-2.5 rounded-lg">
+                                <i class="fas fa-file-contract text-gold"></i> Titre OK
+                            </div>
+                        </div>
+                        <a href="contact.html" class="block w-full py-3.5 text-center bg-slate-900 text-white font-bold rounded-xl hover:bg-gold hover:text-slate-900 transition-all duration-300">Voir les details</a>
+                    </div>
+                </div>
+
+                <!-- Terrain 9 -->
+                <div class="terrain-card group bg-white rounded-3xl overflow-hidden shadow-lg border border-slate-100 card-hover transition-all duration-500" data-zone="soa" data-prix="18" data-surface="600" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-64 image-zoom">
+                        <img src="images/terrain10.jpeg" alt="Terrain Soa Centre" class="w-full h-full object-cover">
+                        <div class="property-badge px-4 py-1.5 bg-emerald-500 text-white text-xs font-black rounded-full uppercase tracking-wide">Nouveau</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-2xl font-black text-gold">18 000 000 <span class="text-sm text-slate-500 font-normal">FCFA</span></span>
+                        </div>
+                        <h3 class="text-xl font-black text-slate-900 mb-2">Terrain Soa Centre Ville</h3>
+                        <div class="flex items-center gap-2 text-slate-500 text-sm mb-4">
+                            <i class="fas fa-map-marker-alt text-gold"></i> Soa, centre administratif
+                        </div>
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <div class="flex items-center gap-2 text-sm text-slate-600 bg-slate-50 px-3 py-2.5 rounded-lg">
+                                <i class="fas fa-ruler-combined text-gold"></i> 600 m2
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-600 bg-slate-50 px-3 py-2.5 rounded-lg">
+                                <i class="fas fa-road text-gold"></i> Bitume
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-600 bg-slate-50 px-3 py-2.5 rounded-lg">
+                                <i class="fas fa-bolt text-gold"></i> Tout viabilise
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-600 bg-slate-50 px-3 py-2.5 rounded-lg">
+                                <i class="fas fa-building text-gold"></i> Bureau possible
+                            </div>
+                        </div>
+                        <a href="contact.html" class="block w-full py-3.5 text-center bg-slate-900 text-white font-bold rounded-xl hover:bg-gold hover:text-slate-900 transition-all duration-300">Voir les details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- No results message -->
+            <div id="noResults" class="hidden text-center py-20">
+                <div class="w-20 h-20 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-search text-3xl text-slate-400"></i>
+                </div>
+                <h3 class="text-2xl font-black text-slate-900 mb-2">Aucun terrain trouve</h3>
+                <p class="text-slate-500">Essayez de modifier vos filtres de recherche.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CARTE DES ZONES ==================== -->
+    <section class="py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <span class="text-gold text-sm font-bold tracking-[0.25em] uppercase">Localisation</span>
+                <h2 class="text-4xl md:text-5xl font-black text-slate-900 mt-4">Nos Zones d'Intervention</h2>
+                <div class="section-divider mx-auto mt-6"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <img src="images/terrain.webp" alt="Carte des zones Cbomelly" class="rounded-3xl shadow-2xl w-full h-[450px] object-cover">
+                </div>
+                <div class="space-y-5" data-aos="fade-left">
+                    <div class="flex items-start gap-5 p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-gold/30 transition-all group">
+                        <div class="w-14 h-14 bg-gold/10 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:bg-gold/20 transition-colors">
+                            <i class="fas fa-map-pin text-gold text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-black text-slate-900">Soa</h3>
+                            <p class="text-slate-600 mt-2 leading-relaxed">Zone administrative en plein essor. Ideale pour residences et bureaux. Acces facile depuis le centre-ville de Yaounde avec voies bitumees et infrastructures modernes.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-5 p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-gold/30 transition-all group">
+                        <div class="w-14 h-14 bg-gold/10 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:bg-gold/20 transition-colors">
+                            <i class="fas fa-map-pin text-gold text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-black text-slate-900">Nkometou</h3>
+                            <p class="text-slate-600 mt-2 leading-relaxed">Commune dynamique avec un marche central tres actif. Parfait pour l'habitation et les petits commerces. Zone en forte croissance demographique.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-5 p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-gold/30 transition-all group">
+                        <div class="w-14 h-14 bg-gold/10 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:bg-gold/20 transition-colors">
+                            <i class="fas fa-map-pin text-gold text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-black text-slate-900">Barriere</h3>
+                            <p class="text-slate-600 mt-2 leading-relaxed">Carrefour commercial strategique. Zone a forte densite de passage, ideale pour investissements commerciaux et projets entrepreneuriaux.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-5 p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-gold/30 transition-all group">
+                        <div class="w-14 h-14 bg-gold/10 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:bg-gold/20 transition-colors">
+                            <i class="fas fa-map-pin text-gold text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-black text-slate-900">Mbankomo</h3>
+                            <p class="text-slate-600 mt-2 leading-relaxed">Zone rurale paisible avec vastes espaces disponibles. Excellente pour projets agricoles, elevage ou residences secondaires loin de l'agitation urbaine.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== AVANTAGES ==================== -->
+    <section class="py-28 bg-slate-900 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-gold/5 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gold/5 rounded-full blur-[120px]"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <span class="text-gold text-sm font-bold tracking-[0.25em] uppercase">Pourquoi Investir</span>
+                <h2 class="text-4xl md:text-5xl font-black text-white mt-4">Avantages de Nos Terrains</h2>
+                <div class="section-divider mx-auto mt-6 bg-gold"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-10 rounded-3xl text-center hover:bg-white/10 transition-all duration-300" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="w-16 h-16 mx-auto bg-gold/20 rounded-2xl flex items-center justify-center mb-5">
+                        <i class="fas fa-file-signature text-2xl text-gold"></i>
+                    </div>
+                    <h3 class="text-lg font-black text-white mb-3">Titres Authentiques</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Tous les titres fonciers sont verifies et authentifies par nos experts juridiques avant mise en vente.</p>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-10 rounded-3xl text-center hover:bg-white/10 transition-all duration-300" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="w-16 h-16 mx-auto bg-gold/20 rounded-2xl flex items-center justify-center mb-5">
+                        <i class="fas fa-chart-line text-2xl text-gold"></i>
+                    </div>
+                    <h3 class="text-lg font-black text-white mb-3">Plus-Value Garantie</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Nos zones sont selectionnees pour leur potentiel de valorisation a long terme et leur attractivite.</p>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-10 rounded-3xl text-center hover:bg-white/10 transition-all duration-300" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="w-16 h-16 mx-auto bg-gold/20 rounded-2xl flex items-center justify-center mb-5">
+                        <i class="fas fa-tools text-2xl text-gold"></i>
+                    </div>
+                    <h3 class="text-lg font-black text-white mb-3">Viabilisation</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Acces a l'eau, a l'electricite et aux voies d'acces pour la majorite de nos parcelles en vente.</p>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-10 rounded-3xl text-center hover:bg-white/10 transition-all duration-300" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="w-16 h-16 mx-auto bg-gold/20 rounded-2xl flex items-center justify-center mb-5">
+                        <i class="fas fa-percentage text-2xl text-gold"></i>
+                    </div>
+                    <h3 class="text-lg font-black text-white mb-3">Paiement Echelonne</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Possibilite de paiement en plusieurs tranches selon vos capacites financieres et votre projet.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CTA TERRAINS ==================== -->
+    <section class="py-20 bg-gold">
+        <div class="max-w-4xl mx-auto px-6 text-center" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-4">Vous ne trouvez pas le terrain ideal ?</h2>
+            <p class="text-slate-800 mb-8 text-lg leading-relaxed">Contactez-nous avec vos criteres. Nous recherchons pour vous le terrain parfait dans notre vaste reseau de partenaires fonciers.</p>
+            <a href="contact.html" class="inline-block px-12 py-4 bg-slate-900 text-white font-black rounded-full hover:bg-slate-800 transition-all shadow-xl text-lg">Faire une demande personnalisee</a>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-slate-900 text-white pt-20 pb-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 gold-gradient rounded-lg flex items-center justify-center">
+                            <span class="text-white font-black text-lg">C</span>
+                        </div>
+                        <div>
+                            <span class="text-xl font-black tracking-tight block">CBOMELLY</span>
+                            <span class="text-[10px] tracking-[0.3em] text-gold uppercase">Immobilier</span>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed mb-6">Votre partenaire de confiance dans l'acquisition de terrains viabilises et securises au Cameroun depuis 2012.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-slate-900 transition-all"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-slate-900 transition-all"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-slate-900 transition-all"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-slate-900 transition-all"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-black mb-6">Liens Rapides</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-slate-400 hover:text-gold transition-colors">Accueil</a></li>
+                        <li><a href="terrains.html" class="text-slate-400 hover:text-gold transition-colors">Nos Terrains</a></li>
+                        <li><a href="a-propos.html" class="text-slate-400 hover:text-gold transition-colors">A Propos</a></li>
+                        <li><a href="conseils.html" class="text-slate-400 hover:text-gold transition-colors">Conseils</a></li>
+                        <li><a href="contact.html" class="text-slate-400 hover:text-gold transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-black mb-6">Nos Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="terrains.html" class="text-slate-400 hover:text-gold transition-colors">Vente de Terrains</a></li>
+                        <li><a href="conseils.html" class="text-slate-400 hover:text-gold transition-colors">Conseil Juridique</a></li>
+                        <li><a href="conseils.html" class="text-slate-400 hover:text-gold transition-colors">Verification Fonciere</a></li>
+                        <li><a href="contact.html" class="text-slate-400 hover:text-gold transition-colors">Accompagnement</a></li>
+                        <li><a href="contact.html" class="text-slate-400 hover:text-gold transition-colors">Estimation Gratuite</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-black mb-6">Contactez-Nous</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt text-gold mt-1"></i>
+                            <span class="text-slate-400">Yaounde, Cameroun<br>Quartier administratif</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone-alt text-gold"></i>
+                            <a href="tel:+237677000000" class="text-slate-400 hover:text-gold transition-colors">+237 677 00 00 00</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-gold"></i>
+                            <a href="mailto:contact@cbomelly.com" class="text-slate-400 hover:text-gold transition-colors">contact@cbomelly.com</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-clock text-gold"></i>
+                            <span class="text-slate-400">Lun - Sam: 8h - 18h</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">&copy; 2024 Cbomelly Immobilier. Tous droits reserves.</p>
+                <div class="flex gap-6 text-sm text-slate-500">
+                    <a href="#" class="hover:text-gold transition-colors">Politique de confidentialite</a>
+                    <a href="#" class="hover:text-gold transition-colors">Mentions legales</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 100, easing: 'ease-out-cubic' });
+
+        // Navbar scroll
+        const navbar = document.getElementById('mainNav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-scrolled', 'py-3');
+                navbar.classList.remove('py-5');
+            } else {
+                navbar.classList.remove('nav-scrolled', 'py-3');
+                navbar.classList.add('py-5');
+            }
+        });
+
+        // Mobile menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Filter functionality
+        const searchInput = document.getElementById('searchInput');
+        const zoneFilter = document.getElementById('zoneFilter');
+        const prixFilter = document.getElementById('prixFilter');
+        const surfaceFilter = document.getElementById('surfaceFilter');
+        const terrainsGrid = document.getElementById('terrainsGrid');
+        const noResults = document.getElementById('noResults');
+        const terrainCards = document.querySelectorAll('.terrain-card');
+
+        function filterTerrains() {
+            const search = searchInput.value.toLowerCase();
+            const zone = zoneFilter.value;
+            const prix = prixFilter.value;
+            const surface = surfaceFilter.value;
+            let visibleCount = 0;
+
+            terrainCards.forEach(card => {
+                const cardZone = card.dataset.zone;
+                const cardPrix = parseFloat(card.dataset.prix);
+                const cardSurface = parseFloat(card.dataset.surface);
+                const cardText = card.textContent.toLowerCase();
+
+                let show = true;
+
+                if (search && !cardText.includes(search)) show = false;
+                if (zone !== 'all' && cardZone !== zone) show = false;
+
+                if (prix !== 'all') {
+                    if (prix === '0-10' && cardPrix >= 10) show = false;
+                    if (prix === '10-20' && (cardPrix < 10 || cardPrix >= 20)) show = false;
+                    if (prix === '20-50' && (cardPrix < 20 || cardPrix >= 50)) show = false;
+                    if (prix === '50+' && cardPrix < 50) show = false;
+                }
+
+                if (surface !== 'all') {
+                    if (surface === '0-300' && cardSurface >= 300) show = false;
+                    if (surface === '300-500' && (cardSurface < 300 || cardSurface >= 500)) show = false;
+                    if (surface === '500-1000' && (cardSurface < 500 || cardSurface >= 1000)) show = false;
+                    if (surface === '1000+' && cardSurface < 1000) show = false;
+                }
+
+                if (show) {
+                    card.style.display = '';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            noResults.classList.toggle('hidden', visibleCount > 0);
+        }
+
+        function resetFilters() {
+            searchInput.value = '';
+            zoneFilter.value = 'all';
+            prixFilter.value = 'all';
+            surfaceFilter.value = 'all';
+            filterTerrains();
+        }
+
+        searchInput.addEventListener('input', filterTerrains);
+        zoneFilter.addEventListener('change', filterTerrains);
+        prixFilter.addEventListener('change', filterTerrains);
+        surfaceFilter.addEventListener('change', filterTerrains);
+    </script>
+</body>
+</html>
