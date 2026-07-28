@@ -1,5 +1,6 @@
 import './globals.css'
 import Script from 'next/script'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import { Nunito } from 'next/font/google'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -13,23 +14,23 @@ const nunito = Nunito({
 })
 
 export const metadata = {
-  metadataBase: new URL('https://cbomelly.cm'),
+  metadataBase: new URL('https://melly.cm'),
 
   title: {
-    default: 'Melly Groupe | Cbomelly — Immobilier, Market & Emploi au Cameroun',
-    template: '%s | Melly Groupe - Cbomelly Cameroun',
+    default: 'Melly Groupe | melly — Immobilier, Market & Emploi au Cameroun',
+    template: '%s | Melly Groupe - melly Cameroun',
   },
 
   description:
-    'Melly Groupe via Cbomelly : leader de l\'immobilier au Cameroun. Achetez des terrains sécurisés à Yaoundé, SOA, Nkometou, Barrière et Mbankomo. Découvrez Melly Market et Melly Emploi.',
+    'Melly Groupe via melly : leader de l\'immobilier au Cameroun. Achetez des terrains sécurisés à Yaoundé, SOA, Nkometou, Barrière et Mbankomo. Découvrez Melly Market et Melly Emploi.',
 
   keywords: [
-    'Melly Groupe', 'Cbomelly', 'Cbomelly Immobilier', 'immobilier Cameroun',
+    'Melly Groupe', 'melly', 'melly Immobilier', 'immobilier Cameroun',
     'terrains Yaoundé', 'achat terrain Cameroun', 'Melly Market', 'Melly Emploi',
     'SOA terrain', 'Nkometou terrain', 'Mbankomo terrain', 'Barrière Yaoundé terrain',
   ],
 
-  authors: [{ name: 'Melly Groupe', url: 'https://cbomelly.cm' }],
+  authors: [{ name: 'Melly Groupe', url: 'https://melly.cm' }],
   creator: 'Melly Groupe',
   publisher: 'Melly Groupe',
 
@@ -48,9 +49,9 @@ export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
-    url: 'https://cbomelly.cm',
-    siteName: 'Melly Groupe - Cbomelly',
-    title: 'Melly Groupe | Cbomelly — Immobilier, Market & Emploi au Cameroun',
+    url: 'https://melly.cm',
+    siteName: 'Melly Groupe - melly',
+    title: 'Melly Groupe | melly — Immobilier, Market & Emploi au Cameroun',
     description: 'Leader de l\'immobilier au Cameroun. Terrains sécurisés, Market et Emploi.',
     images: [
       {
@@ -64,14 +65,11 @@ export const metadata = {
 
   twitter: {
     card: 'summary_large_image',
-    title: 'Melly Groupe | Cbomelly',
+    title: 'Melly Groupe | Melly',
     description: 'Leader de l\'immobilier au Cameroun.',
     images: ['/images/melly-logo.png'],
   },
 
-  // ============================================
-  // FAVICON EXPLICITE (déclaré manuellement)
-  // ============================================
   icons: {
     icon: [
       { url: '/images/melly-logo.png', type: 'image/png', sizes: '32x32' },
@@ -93,12 +91,12 @@ const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Melly Groupe - Cbomelly',
-  url: 'https://cbomelly.cm',
-  logo: 'https://cbomelly.cm/images/melly-logo.png',
+  url: 'https://melly.cm', // ✅ CORRIGÉ
+  logo: 'https://melly.cm/images/melly-logo.png',
   description: 'Leader de l\'immobilier au Cameroun.',
   contactPoint: {
     '@type': 'ContactPoint',
-    telephone: '+237-699-999-999',
+    telephone: '+237-699-999-999', // À remplacer par le vrai numéro
     contactType: 'Service Client',
     areaServed: 'CM',
     availableLanguage: ['French', 'English'],
@@ -112,7 +110,9 @@ export default function RootLayout({ children }) {
         <Script
           id="structured-data"
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData),
+          }}
         />
 
         <a
@@ -123,12 +123,18 @@ export default function RootLayout({ children }) {
         </a>
 
         <Navbar />
+
         <main id="main-content" className="min-h-screen">
           {children}
         </main>
+
         <Footer />
+
         <BackToTop />
       </body>
+
+      {/* Google Analytics - Composant officiel Next.js */}
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
     </html>
   )
 }
