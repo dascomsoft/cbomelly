@@ -91,7 +91,7 @@ const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Melly Groupe - Cbomelly',
-  url: 'https://melly.cm', // ✅ CORRIGÉ
+  url: 'https://melly.cm',
   logo: 'https://melly.cm/images/melly-logo.png',
   description: 'Leader de l\'immobilier au Cameroun.',
   contactPoint: {
@@ -131,6 +131,21 @@ export default function RootLayout({ children }) {
         <Footer />
 
         <BackToTop />
+
+        {/* ===== MICROSOFT CLARITY ===== */}
+        <Script
+          id="clarity"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window, document, "clarity", "script", "xtzbfnosxa");
+            `,
+          }}
+        />
       </body>
 
       {/* Google Analytics - Composant officiel Next.js */}
