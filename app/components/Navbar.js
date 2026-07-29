@@ -76,7 +76,7 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Navbar */}
+      {/* ==================== NAVBAR ==================== */}
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
@@ -127,7 +127,7 @@ export default function Navbar() {
               </Link>
             </div>
 
-            {/* ✅ Bouton Menu Mobile - UN SEUL bouton hamburger/croix */}
+            {/* Bouton hamburger — reste DANS la navbar */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="lg:hidden relative w-10 h-10 flex items-center justify-center text-white hover:text-[#D4AF37] transition-colors duration-300 z-50"
@@ -142,75 +142,78 @@ export default function Navbar() {
             </button>
           </div>
         </div>
+      </nav>
 
-        {/* Overlay mobile */}
-        <div
-          className={`lg:hidden fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 z-40 ${
-            isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-          }`}
-          onClick={() => setIsMenuOpen(false)}
-        />
+      {/* ==================== OVERLAY MOBILE — EN DEHORS de la nav ==================== */}
+      <div
+        className={`lg:hidden fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 z-[55] ${
+          isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
+        onClick={() => setIsMenuOpen(false)}
+      />
 
-        {/* ✅ Menu Mobile - Panneau latéral SANS bouton croix (déjà dans le hamburger) */}
-        <div
-          className={`lg:hidden fixed top-0 right-0 h-full w-[300px] max-w-[85vw] bg-slate-900 shadow-2xl shadow-black/50 transition-transform duration-300 ease-in-out z-40 overflow-y-auto ${
-            isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-          }`}
-        >
-          {/* ✅ En-tête du menu mobile - SANS bouton croix */}
-          <div className="flex items-center p-5 border-b border-gray-800">
-            <div className="flex items-center space-x-2">
-              <Image src="/images/melly-logo.png" alt="Melly" width={36} height={36} className="object-contain" />
-              <div>
-                <span className="text-lg font-extrabold text-[#D4AF37]">Melly</span>
-                <p className="text-[10px] text-gray-400">Melly Groupe</p>
-              </div>
-            </div>
-          </div>
-
-          {/* ✅ Liens du menu mobile AVEC icônes SVG */}
-          <div className="p-4 space-y-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setIsMenuOpen(false)}
-                className={`flex items-center px-4 py-3 rounded-xl font-semibold text-base transition-all duration-200 ${
-                  pathname === link.href
-                    ? 'bg-[#D4AF37]/15 text-[#D4AF37] border-l-4 border-[#D4AF37]'
-                    : 'text-gray-300 hover:bg-slate-800 hover:text-white'
-                }`}
-              >
-                {/* ✅ Icône SVG pour chaque lien */}
-                <svg className="w-5 h-5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={link.icon} />
-                </svg>
-                {link.label}
-              </Link>
-            ))}
-          </div>
-
-          {/* Bouton Contact en bas du menu */}
-          <div className="p-4 border-t border-gray-800 mt-4">
-            <Link
-              href="/contact"
-              onClick={() => setIsMenuOpen(false)}
-              className="flex items-center justify-center bg-gradient-to-r from-[#D4AF37] to-[#FFD700] text-slate-900 py-3.5 rounded-xl font-bold text-base hover:shadow-lg hover:shadow-[#D4AF37]/30 transition-all duration-300"
-            >
-              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-              Contactez-nous
-            </Link>
-
-            {/* Info contact rapide */}
-            <div className="mt-4 text-center text-xs text-gray-500">
-              <p>Melly Groupe © {new Date().getFullYear()}</p>
-              <a href="tel:+237673620096" className="text-[#D4AF37] hover:underline">+237 673 620 096</a>
+      {/* ==================== MENU MOBILE — EN DEHORS de la nav ==================== */}
+      {/* 
+        FIX CRITIQUE : Le menu est placé comme frère de la <nav> (pas comme enfant).
+        Ainsi il possède son propre contexte d'empilement et z-index absolu.
+        z-[60] > z-50 de la navbar = menu toujours visible au-dessus de tout.
+      */}
+      <div
+        className={`lg:hidden fixed top-0 right-0 h-full w-[300px] max-w-[85vw] bg-slate-900 shadow-2xl shadow-black/50 transition-transform duration-300 ease-in-out z-[60] overflow-y-auto ${
+          isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        {/* En-tête du menu */}
+        <div className="flex items-center p-5 border-b border-gray-800">
+          <div className="flex items-center space-x-2">
+            <Image src="/images/melly-logo.png" alt="Melly" width={36} height={36} className="object-contain" />
+            <div>
+              <span className="text-lg font-extrabold text-[#D4AF37]">Melly</span>
+              <p className="text-[10px] text-gray-400">Melly Groupe</p>
             </div>
           </div>
         </div>
-      </nav>
+
+        {/* Liens du menu avec icônes */}
+        <div className="p-4 space-y-1">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={() => setIsMenuOpen(false)}
+              className={`flex items-center px-4 py-3 rounded-xl font-semibold text-base transition-all duration-200 ${
+                pathname === link.href
+                  ? 'bg-[#D4AF37]/15 text-[#D4AF37] border-l-4 border-[#D4AF37]'
+                  : 'text-gray-300 hover:bg-slate-800 hover:text-white'
+              }`}
+            >
+              <svg className="w-5 h-5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={link.icon} />
+              </svg>
+              {link.label}
+            </Link>
+          ))}
+        </div>
+
+        {/* Bouton Contact en bas */}
+        <div className="p-4 border-t border-gray-800 mt-4">
+          <Link
+            href="/contact"
+            onClick={() => setIsMenuOpen(false)}
+            className="flex items-center justify-center bg-gradient-to-r from-[#D4AF37] to-[#FFD700] text-slate-900 py-3.5 rounded-xl font-bold text-base hover:shadow-lg hover:shadow-[#D4AF37]/30 transition-all duration-300"
+          >
+            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            Contactez-nous
+          </Link>
+
+          <div className="mt-4 text-center text-xs text-gray-500">
+            <p>Melly Groupe © {new Date().getFullYear()}</p>
+            <a href="tel:+237673620096" className="text-[#D4AF37] hover:underline">+237 673 620 096</a>
+          </div>
+        </div>
+      </div>
 
       {/* Espaceur pour compenser la navbar fixe */}
       <div className="h-16 md:h-20"></div>
