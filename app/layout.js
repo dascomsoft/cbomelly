@@ -5,6 +5,7 @@ import { Nunito } from 'next/font/google'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import BackToTop from './components/BackToTop'
+import Clarity from './components/Clarity'
 
 const nunito = Nunito({
   subsets: ['latin'],
@@ -22,7 +23,7 @@ export const metadata = {
   },
 
   description:
-    'Melly Groupe via melly : leader de l\'immobilier au Cameroun. Achetez des terrains sécurisés à Yaoundé, SOA, Nkometou, Barrière et Mbankomo. Découvrez Melly Market et Melly Emploi.',
+    "Melly Groupe via melly : leader de l'immobilier au Cameroun. Achetez des terrains sécurisés à Yaoundé, SOA, Nkometou, Barrière et Mbankomo. Découvrez Melly Market et Melly Emploi.",
 
   keywords: [
     'Melly Groupe', 'melly', 'melly Immobilier', 'immobilier Cameroun',
@@ -96,7 +97,7 @@ const structuredData = {
   description: 'Leader de l\'immobilier au Cameroun.',
   contactPoint: {
     '@type': 'ContactPoint',
-    telephone: '+237-699-999-999', // À remplacer par le vrai numéro
+    telephone: '+237-699-999-999',
     contactType: 'Service Client',
     areaServed: 'CM',
     availableLanguage: ['French', 'English'],
@@ -132,24 +133,12 @@ export default function RootLayout({ children }) {
 
         <BackToTop />
 
-        {/* ===== MICROSOFT CLARITY ===== */}
-        <Script
-          id="clarity"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function(c,l,a,r,i,t,y){
-                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-              })(window, document, "clarity", "script", "xtzbfnosxa");
-            `,
-          }}
-        />
-      </body>
+        {/* ===== MICROSOFT CLARITY (composant client robuste) ===== */}
+        <Clarity />
 
-      {/* Google Analytics - Composant officiel Next.js */}
-      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+        {/* ===== GOOGLE ANALYTICS (déplacé à l'intérieur du body) ===== */}
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+      </body>
     </html>
   )
 }
