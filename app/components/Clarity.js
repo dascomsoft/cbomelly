@@ -5,14 +5,8 @@ import { useEffect } from 'react'
 export default function Clarity() {
   useEffect(() => {
     if (typeof window === 'undefined') return
-
-    // Protection cruciale : empêche React de réexécuter le script
-    // à chaque navigation client-side ou remount
     if (window.__clarityLoaded) return
 
-    // ============================================
-    // CODE OFFICIEL CLARITY (inchangé)
-    // ============================================
     ;(function (c, l, a, r, i, t, y) {
       c[a] =
         c[a] ||

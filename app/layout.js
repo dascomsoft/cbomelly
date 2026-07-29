@@ -29,6 +29,7 @@ export const metadata = {
     'Melly Groupe', 'melly', 'melly Immobilier', 'immobilier Cameroun',
     'terrains Yaoundé', 'achat terrain Cameroun', 'Melly Market', 'Melly Emploi',
     'SOA terrain', 'Nkometou terrain', 'Mbankomo terrain', 'Barrière Yaoundé terrain',
+    'agence immobilière Yaoundé', 'terrain Ngousso', 'promoteur immobilier Cameroun',
   ],
 
   authors: [{ name: 'Melly Groupe', url: 'https://melly.cm' }],
@@ -45,6 +46,10 @@ export const metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
+  },
+
+  alternates: {
+    canonical: '/',
   },
 
   openGraph: {
@@ -82,26 +87,55 @@ export const metadata = {
     ],
   },
 
+  manifest: '/manifest.json',
+
   other: {
     'theme-color': '#D4AF37',
     'msapplication-TileColor': '#D4AF37',
   },
 }
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#D4AF37',
+}
+
 const structuredData = {
   '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'Melly Groupe - Cbomelly',
+  '@type': 'RealEstateAgent',
+  name: 'Melly Groupe',
+  alternateName: 'melly',
   url: 'https://melly.cm',
   logo: 'https://melly.cm/images/melly-logo.png',
-  description: 'Leader de l\'immobilier au Cameroun.',
-  contactPoint: {
-    '@type': 'ContactPoint',
-    telephone: '+237-699-999-999',
-    contactType: 'Service Client',
-    areaServed: 'CM',
-    availableLanguage: ['French', 'English'],
+  description:
+    "Leader de l'immobilier au Cameroun. Vente de terrains sécurisés à Yaoundé, SOA, Nkometou, Barrière et Mbankomo. Services Melly Market et Melly Emploi.",
+  telephone: '+237 673 620 096',
+  email: 'melly_jo2001@yahoo.fr',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Ngousso, Descente Eleveur',
+    addressLocality: 'Yaoundé',
+    addressRegion: 'Centre',
+    addressCountry: 'CM',
   },
+  contactPoint: [
+    {
+      '@type': 'ContactPoint',
+      telephone: '+237 673 620 096',
+      contactType: 'Service Client',
+      areaServed: 'CM',
+      availableLanguage: ['French', 'English'],
+    },
+    {
+      '@type': 'ContactPoint',
+      telephone: '+237 699 520 030',
+      contactType: 'Ventes',
+      areaServed: 'CM',
+      availableLanguage: ['French', 'English'],
+    },
+  ],
+  priceRange: '$$',
 }
 
 export default function RootLayout({ children }) {
@@ -133,10 +167,10 @@ export default function RootLayout({ children }) {
 
         <BackToTop />
 
-        {/* ===== MICROSOFT CLARITY (composant client robuste) ===== */}
+        {/* ===== MICROSOFT CLARITY ===== */}
         <Clarity />
 
-        {/* ===== GOOGLE ANALYTICS (déplacé à l'intérieur du body) ===== */}
+        {/* ===== GOOGLE ANALYTICS ===== */}
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
       </body>
     </html>

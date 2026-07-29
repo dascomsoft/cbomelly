@@ -1,0 +1,12 @@
+{
+  "name": "Melly Groupe",
+  "short_name": "Melly",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#D4AF37",
+  "icons": [
+    { "src": "/images/melly-logo.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/images/melly-logo.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
