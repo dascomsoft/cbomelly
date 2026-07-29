@@ -37,13 +37,41 @@ export default function Navbar() {
   }, [isMenuOpen])
 
   const navLinks = [
-    { href: '/', label: 'Accueil' },
-    { href: '/terrains', label: 'Nos Terrains' },
-    { href: '/melly-market', label: 'Melly Market' },
-    { href: '/melly-emploi', label: 'Melly Emploi' },
-    { href: '/a-propos', label: 'À Propos' },
-    { href: '/conseils', label: 'Conseils' },
-    { href: '/contact', label: 'Contact' },
+    { 
+      href: '/', 
+      label: 'Accueil',
+      icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6'
+    },
+    { 
+      href: '/terrains', 
+      label: 'Nos Terrains',
+      icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z'
+    },
+    { 
+      href: '/melly-market', 
+      label: 'Melly Market',
+      icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z'
+    },
+    { 
+      href: '/melly-emploi', 
+      label: 'Melly Emploi',
+      icon: 'M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z'
+    },
+    { 
+      href: '/a-propos', 
+      label: 'À Propos',
+      icon: 'M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
+    },
+    { 
+      href: '/conseils', 
+      label: 'Conseils',
+      icon: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253'
+    },
+    { 
+      href: '/contact', 
+      label: 'Contact',
+      icon: 'M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z'
+    },
   ]
 
   return (
@@ -63,10 +91,10 @@ export default function Navbar() {
               <div className="relative w-10 h-10 md:w-12 md:h-12">
                 <Image
                   src="/images/melly-logo.png"
-                  alt="Melly Groupe - Cbomelly"
+                  alt="Melly Groupe"
                   width={48}
                   height={48}
-                  className="object-contain rounded-full group-hover:scale-110 transition-transform duration-300"
+                  className="object-contain group-hover:scale-110 transition-transform duration-300"
                   priority
                 />
               </div>
@@ -99,7 +127,7 @@ export default function Navbar() {
               </Link>
             </div>
 
-            {/* Bouton Menu Mobile */}
+            {/* ✅ Bouton Menu Mobile - UN SEUL bouton hamburger/croix */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="lg:hidden relative w-10 h-10 flex items-center justify-center text-white hover:text-[#D4AF37] transition-colors duration-300 z-50"
@@ -123,30 +151,24 @@ export default function Navbar() {
           onClick={() => setIsMenuOpen(false)}
         />
 
-        {/* Menu Mobile - Panneau latéral */}
+        {/* ✅ Menu Mobile - Panneau latéral SANS bouton croix (déjà dans le hamburger) */}
         <div
           className={`lg:hidden fixed top-0 right-0 h-full w-[300px] max-w-[85vw] bg-slate-900 shadow-2xl shadow-black/50 transition-transform duration-300 ease-in-out z-40 overflow-y-auto ${
             isMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
-          {/* En-tête du menu mobile */}
-          <div className="flex items-center justify-between p-5 border-b border-gray-800">
+          {/* ✅ En-tête du menu mobile - SANS bouton croix */}
+          <div className="flex items-center p-5 border-b border-gray-800">
             <div className="flex items-center space-x-2">
               <Image src="/images/melly-logo.png" alt="Melly" width={36} height={36} className="object-contain" />
-              <span className="text-lg font-extrabold text-[#D4AF37]">Melly</span>
+              <div>
+                <span className="text-lg font-extrabold text-[#D4AF37]">Melly</span>
+                <p className="text-[10px] text-gray-400">Melly Groupe</p>
+              </div>
             </div>
-            <button
-              onClick={() => setIsMenuOpen(false)}
-              className="w-8 h-8 flex items-center justify-center text-gray-400 hover:text-white transition-colors"
-              aria-label="Fermer le menu"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
           </div>
 
-          {/* Liens du menu mobile */}
+          {/* ✅ Liens du menu mobile AVEC icônes SVG */}
           <div className="p-4 space-y-1">
             {navLinks.map((link) => (
               <Link
@@ -155,20 +177,14 @@ export default function Navbar() {
                 onClick={() => setIsMenuOpen(false)}
                 className={`flex items-center px-4 py-3 rounded-xl font-semibold text-base transition-all duration-200 ${
                   pathname === link.href
-                    ? 'bg-[#D4AF37]/15 text-[#D4AF37] border-l-3 border-[#D4AF37]'
+                    ? 'bg-[#D4AF37]/15 text-[#D4AF37] border-l-4 border-[#D4AF37]'
                     : 'text-gray-300 hover:bg-slate-800 hover:text-white'
                 }`}
               >
-                {/* Icône selon la page */}
-                <span className="mr-3 text-lg">
-                  {link.label === 'Accueil' && ''}
-                  {link.label === 'Nos Terrains' && ''}
-                  {link.label === 'Melly Market' && ''}
-                  {link.label === 'Melly Emploi' && ''}
-                  {link.label === 'À Propos' && ''}
-                  {link.label === 'Conseils' && ''}
-                  {link.label === 'Contact' && ''}
-                </span>
+                {/* ✅ Icône SVG pour chaque lien */}
+                <svg className="w-5 h-5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={link.icon} />
+                </svg>
                 {link.label}
               </Link>
             ))}

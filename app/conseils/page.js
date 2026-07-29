@@ -117,7 +117,7 @@ export default function ConseilsPage() {
           <img src="/images/terrain-background2.jpg" alt="Conseils immobiliers" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-primary-dark/95 via-primary-dark/80 to-primary-dark/95"></div>
         </div>
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto pt-20">
+        <div className="relative z-5 text-center px-4 max-w-4xl mx-auto pt-20">
           <h1 className="text-5xl md:text-7xl font-extrabold mb-6" data-aos="fade-up">
             Guide <span className="text-accent-light">d'Achat</span>
           </h1>

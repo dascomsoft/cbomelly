@@ -33,7 +33,7 @@ export default function HomePage() {
     {
       icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z',
       title: 'Emplacements Premium',
-      description: 'Zones à fort potentiel : SOA, Nkometou, Barrière, Mbankomo. Proximité axes routiers.'
+      description: 'Zones à fort potentiel : SOA, Nkometou, Barrière, Mbankomo.'
     },
     {
       icon: 'M13 7h8m0 0v8m0-8l-8 8-4-4-6 6',
@@ -122,12 +122,12 @@ export default function HomePage() {
         .pulse-gold{animation:pulse-gold 2s infinite}
         .card-hover{transition:all .4s cubic-bezier(.165,.84,.44,1)}
         .card-hover:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,.3)}
-        .btn-primary{background:linear-gradient(135deg,#D4AF37,#FFD700);color:#0f172a;font-weight:700;padding:.75rem 1.5rem;border-radius:.75rem;transition:all .3s;display:inline-block;text-decoration:none;box-shadow:0 10px 30px rgba(212,175,55,.3);font-size:.875rem}
+        .btn-primary{background:linear-gradient(135deg,#D4AF37,#FFD700);color:#0f172a;font-weight:700;padding:.85rem 1.75rem;border-radius:.75rem;transition:all .3s;display:inline-block;text-decoration:none;box-shadow:0 10px 30px rgba(212,175,55,.3);font-size:.9rem}
         .btn-primary:hover{background:linear-gradient(135deg,#FFD700,#D4AF37);transform:translateY(-2px);box-shadow:0 20px 50px rgba(212,175,55,.4)}
-        .btn-outline{border:2px solid #D4AF37;color:#D4AF37;font-weight:700;padding:.75rem 1.5rem;border-radius:.75rem;transition:all .3s;display:inline-block;text-decoration:none;font-size:.875rem}
+        .btn-outline{border:2px solid #D4AF37;color:#D4AF37;font-weight:700;padding:.85rem 1.75rem;border-radius:.75rem;transition:all .3s;display:inline-block;text-decoration:none;font-size:.9rem}
         .btn-outline:hover{background:#D4AF37;color:#0f172a}
         @media(min-width:640px){.btn-primary,.btn-outline{padding:1rem 2rem;font-size:1rem}}
-        .section-padding{padding:3rem 1rem}
+        .section-padding{padding:3.5rem 1rem}
         @media(min-width:768px){.section-padding{padding:5rem 2rem}}
         @media(min-width:1024px){.section-padding{padding:6rem 2rem}}
       `}</style>
@@ -146,28 +146,28 @@ export default function HomePage() {
 
         <div className="relative z-10 text-center px-4 max-w-5xl mx-auto pt-16 md:pt-20 w-full">
           {/* Logo */}
-          <div className="mb-4 md:mb-8" data-aos="fade-down" data-aos-duration="1000">
+          <div className="mb-5 md:mb-8" data-aos="fade-down" data-aos-duration="1000">
             <div className="relative inline-block">
               <div className="absolute inset-0 bg-[#D4AF37]/20 rounded-full blur-2xl animate-pulse"></div>
-              <Image src="/images/melly-logo.png" alt="Melly Groupe" width={200} height={200} className="relative rounded-full z-10 mx-auto drop-shadow-2xl hover:scale-110 transition-transform duration-500 w-[70px] h-[70px] sm:w-[90px] sm:h-[90px] md:w-[110px] md:h-[110px] lg:w-[130px] lg:h-[130px]" priority />
+              <Image src="/images/melly-logo.png" alt="Melly Groupe" width={200} height={200} className="relative rounded-full z-10 mx-auto drop-shadow-2xl hover:scale-110 transition-transform duration-500 w-[75px] h-[75px] sm:w-[95px] sm:h-[95px] md:w-[115px] md:h-[115px] lg:w-[135px] lg:h-[135px]" priority />
             </div>
           </div>
 
           {/* Badge */}
           <div data-aos="fade-up" data-aos-duration="1000">
-            <div className="inline-flex items-center bg-[#D4AF37]/10 backdrop-blur-sm border border-[#D4AF37]/30 text-[#D4AF37] px-3 py-1.5 md:px-6 md:py-2.5 rounded-full font-bold text-[10px] md:text-sm mb-3 md:mb-6">
+            <div className="inline-flex items-center bg-[#D4AF37]/10 backdrop-blur-sm border border-[#D4AF37]/30 text-[#D4AF37] px-4 py-1.5 md:px-6 md:py-2.5 rounded-full font-bold text-xs md:text-sm mb-4 md:mb-6">
               Leader de l'immobilier au Cameroun
             </div>
           </div>
 
           {/* Titre */}
-          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold mb-3 md:mb-6 leading-tight" data-aos="fade-up" data-aos-delay="200">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold mb-4 md:mb-6 leading-tight" data-aos="fade-up" data-aos-delay="200">
             Investissez dans la<br/>
             <span className="text-[#D4AF37]">Terre de vos Rêves</span>
           </h1>
 
           {/* Sous-titre */}
-          <p className="text-sm sm:text-base md:text-xl lg:text-2xl text-gray-300 mb-6 md:mb-10 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="400">
+          <p className="text-[15px] sm:text-base md:text-xl lg:text-2xl text-gray-300 mb-6 md:mb-10 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="400">
             Terrains sécurisés à Yaoundé et environs. Construisez votre avenir avec <strong className="text-[#D4AF37]">Melly Groupe</strong>.
           </p>
 
@@ -178,11 +178,11 @@ export default function HomePage() {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-4 md:gap-8 mt-8 md:mt-16 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="800">
+          <div className="grid grid-cols-3 gap-4 md:gap-8 mt-10 md:mt-16 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="800">
             {stats.map((stat) => (
               <div key={stat.label} className="group cursor-default">
                 <div className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#D4AF37] group-hover:scale-110 transition-transform duration-300">{stat.value}</div>
-                <div className="text-[10px] sm:text-xs md:text-sm text-gray-400 mt-1 font-medium">{stat.label}</div>
+                <div className="text-xs sm:text-sm md:text-base text-gray-400 mt-1 font-medium">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -200,24 +200,24 @@ export default function HomePage() {
       {/* ============================================ */}
       <section className="section-padding bg-slate-800/50">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-8 md:mb-16" data-aos="fade-up">
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold mb-3 md:mb-4">Nos <span className="text-[#D4AF37]">Services</span></h2>
+          <div className="text-center mb-10 md:mb-16" data-aos="fade-up">
+            <h2 className="text-3xl sm:text-3xl md:text-5xl font-extrabold mb-3 md:mb-4">Nos <span className="text-[#D4AF37]">Services</span></h2>
             <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] mx-auto mb-4 md:mb-6"></div>
-            <p className="text-sm md:text-xl text-gray-300 max-w-3xl mx-auto">Découvrez tous les services de <strong className="text-[#D4AF37]">Melly Groupe</strong></p>
+            <p className="text-[15px] md:text-xl text-gray-300 max-w-3xl mx-auto">Découvrez tous les services de <strong className="text-[#D4AF37]">Melly Groupe</strong></p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
             {services.map((service, index) => (
-              <Link key={service.title} href={service.href} className="bg-slate-900/80 backdrop-blur-sm rounded-xl md:rounded-2xl p-5 md:p-8 border border-gray-700/50 card-hover group relative overflow-hidden" data-aos="fade-up" data-aos-delay={index * 200}>
+              <Link key={service.title} href={service.href} className="bg-slate-900/80 backdrop-blur-sm rounded-xl md:rounded-2xl p-6 md:p-8 border border-gray-700/50 card-hover group relative overflow-hidden" data-aos="fade-up" data-aos-delay={index * 200}>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#D4AF37]/5 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000"></div>
-                {service.badge && <div className={`absolute top-3 right-3 md:top-4 md:right-4 ${service.badgeColor} px-2 py-0.5 md:px-3 md:py-1 rounded-full text-[10px] md:text-xs font-bold`}>{service.badge}</div>}
+                {service.badge && <div className={`absolute top-3 right-3 md:top-4 md:right-4 ${service.badgeColor} px-2.5 py-0.5 md:px-3 md:py-1 rounded-full text-xs md:text-xs font-bold`}>{service.badge}</div>}
                 <div className="relative">
-                  <div className="w-12 h-12 md:w-16 md:h-16 bg-slate-800 rounded-lg md:rounded-xl flex items-center justify-center mb-4 md:mb-6 group-hover:bg-[#D4AF37] transition-colors">
-                    <svg className="w-6 h-6 md:w-8 md:h-8 text-[#D4AF37] group-hover:text-slate-900 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={service.icon} /></svg>
+                  <div className="w-14 h-14 md:w-16 md:h-16 bg-slate-800 rounded-lg md:rounded-xl flex items-center justify-center mb-4 md:mb-6 group-hover:bg-[#D4AF37] transition-colors">
+                    <svg className="w-7 h-7 md:w-8 md:h-8 text-[#D4AF37] group-hover:text-slate-900 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={service.icon} /></svg>
                   </div>
-                  <h3 className="text-lg md:text-2xl font-bold mb-2 md:mb-4 text-white group-hover:text-[#D4AF37] transition-colors">{service.title}</h3>
-                  <p className="text-xs md:text-base text-gray-400 leading-relaxed">{service.description}</p>
-                  <div className="mt-4 md:mt-6 flex items-center text-[#D4AF37] font-bold text-xs md:text-base">
+                  <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-4 text-white group-hover:text-[#D4AF37] transition-colors">{service.title}</h3>
+                  <p className="text-sm md:text-base text-gray-400 leading-relaxed">{service.description}</p>
+                  <div className="mt-4 md:mt-6 flex items-center text-[#D4AF37] font-bold text-sm md:text-base">
                     <span>En savoir plus</span>
                     <svg className="w-4 h-4 md:w-5 md:h-5 ml-1 md:ml-2 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                   </div>
@@ -237,44 +237,43 @@ export default function HomePage() {
         </div>
         
         <div className="max-w-7xl mx-auto relative z-10">
-          {/* Logo animé */}
           <div className="text-center mb-12 md:mb-20">
-            <div className="relative inline-block mb-4 md:mb-8" data-aos="zoom-in" data-aos-duration="1000">
-              <div className="absolute inset-0 w-24 h-24 md:w-40 md:h-40 mx-auto animate-spin-slow"><div className="absolute inset-0 rounded-full border-3 md:border-4 border-dashed border-[#D4AF37]/30"></div></div>
-              <div className="absolute inset-0 w-24 h-24 md:w-40 md:h-40 mx-auto"><div className="absolute inset-0 rounded-full bg-[#D4AF37]/20 animate-ping-slow"></div></div>
-              <div className="relative w-24 h-24 md:w-40 md:h-40 mx-auto bg-gradient-to-br from-slate-800 to-slate-900 rounded-full flex items-center justify-center border-3 md:border-4 border-[#D4AF37] shadow-2xl shadow-[#D4AF37]/20 group hover:scale-110 transition-transform duration-500 overflow-hidden">
-                <Image src="/images/melly-logo.png" alt="Melly Groupe" width={60} height={60} className="object-contain group-hover:scale-110 transition-transform duration-500 md:w-[100px] md:h-[100px]" />
-                <div className="absolute w-3 h-3 md:w-5 md:h-5 bg-[#D4AF37] rounded-full top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-float shadow-lg shadow-[#D4AF37]/50"></div>
-                <div className="absolute w-2.5 h-2.5 md:w-4 md:h-4 bg-[#FFD700] rounded-full bottom-2 md:bottom-3 right-0 transform translate-x-1/2 animate-float-delayed shadow-lg"></div>
-                <div className="absolute w-2.5 h-2.5 md:w-4 md:h-4 bg-[#D4AF37] rounded-full bottom-2 md:bottom-3 left-0 transform -translate-x-1/2 animate-float shadow-lg" style={{ animationDelay: '0.5s' }}></div>
+            <div className="relative inline-block mb-5 md:mb-8" data-aos="zoom-in" data-aos-duration="1000">
+              <div className="absolute inset-0 w-28 h-28 md:w-40 md:h-40 mx-auto animate-spin-slow"><div className="absolute inset-0 rounded-full border-3 md:border-4 border-dashed border-[#D4AF37]/30"></div></div>
+              <div className="absolute inset-0 w-28 h-28 md:w-40 md:h-40 mx-auto"><div className="absolute inset-0 rounded-full bg-[#D4AF37]/20 animate-ping-slow"></div></div>
+              <div className="relative w-28 h-28 md:w-40 md:h-40 mx-auto bg-gradient-to-br from-slate-800 to-slate-900 rounded-full flex items-center justify-center border-3 md:border-4 border-[#D4AF37] shadow-2xl shadow-[#D4AF37]/20 group hover:scale-110 transition-transform duration-500 overflow-hidden">
+                <Image src="/images/melly-logo.png" alt="Melly Groupe" width={70} height={70} className="object-contain group-hover:scale-110 transition-transform duration-500 md:w-[100px] md:h-[100px]" />
+                <div className="absolute w-3.5 h-3.5 md:w-5 md:h-5 bg-[#D4AF37] rounded-full top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-float shadow-lg shadow-[#D4AF37]/50"></div>
+                <div className="absolute w-3 h-3 md:w-4 md:h-4 bg-[#FFD700] rounded-full bottom-2 md:bottom-3 right-0 transform translate-x-1/2 animate-float-delayed shadow-lg"></div>
+                <div className="absolute w-3 h-3 md:w-4 md:h-4 bg-[#D4AF37] rounded-full bottom-2 md:bottom-3 left-0 transform -translate-x-1/2 animate-float shadow-lg" style={{ animationDelay: '0.5s' }}></div>
               </div>
             </div>
             
             <div data-aos="fade-up" data-aos-delay="200">
-              <h3 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-[#D4AF37] tracking-wide">Melly</h3>
-              <p className="text-sm md:text-xl text-gray-300 font-light tracking-widest uppercase mt-1 md:mt-2">Immobilier Premium</p>
+              <h3 className="text-4xl sm:text-4xl md:text-6xl font-extrabold text-[#D4AF37] tracking-wide">Melly</h3>
+              <p className="text-base md:text-xl text-gray-300 font-light tracking-widest uppercase mt-1 md:mt-2">Immobilier Premium</p>
               <div className="w-24 md:w-32 h-1 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] mx-auto mt-3 md:mt-4"></div>
             </div>
             
-            <p className="text-sm md:text-xl text-gray-400 mt-4 md:mt-8 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="400">Votre partenaire de confiance pour des investissements fonciers sécurisés au Cameroun</p>
+            <p className="text-[15px] md:text-xl text-gray-400 mt-5 md:mt-8 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="400">Votre partenaire de confiance pour des investissements fonciers sécurisés au Cameroun</p>
           </div>
           
-          <div className="text-center mb-8 md:mb-16" data-aos="fade-up" data-aos-delay="600">
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold mb-3 md:mb-4">Pourquoi <span className="text-[#D4AF37]">Melly</span> ?</h2>
+          <div className="text-center mb-10 md:mb-16" data-aos="fade-up" data-aos-delay="600">
+            <h2 className="text-3xl sm:text-3xl md:text-5xl font-extrabold mb-3 md:mb-4">Pourquoi <span className="text-[#D4AF37]">Melly</span> ?</h2>
             <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] mx-auto mb-4 md:mb-6"></div>
-            <p className="text-sm md:text-xl text-gray-300 max-w-3xl mx-auto">Notre engagement envers l'excellence fait de nous le partenaire idéal pour votre investissement.</p>
+            <p className="text-[15px] md:text-xl text-gray-300 max-w-3xl mx-auto">Notre engagement envers l'excellence fait de nous le partenaire idéal.</p>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
             {features.map((feature, index) => (
-              <div key={feature.title} className="bg-slate-800/50 backdrop-blur-sm rounded-xl md:rounded-2xl p-5 md:p-8 border border-gray-700/50 card-hover group relative overflow-hidden" data-aos="fade-up" data-aos-delay={index * 200}>
+              <div key={feature.title} className="bg-slate-800/50 backdrop-blur-sm rounded-xl md:rounded-2xl p-6 md:p-8 border border-gray-700/50 card-hover group relative overflow-hidden" data-aos="fade-up" data-aos-delay={index * 200}>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#D4AF37]/10 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000"></div>
                 <div className="relative">
-                  <div className="w-14 h-14 md:w-20 md:h-20 bg-gradient-to-br from-[#D4AF37] to-[#FFD700] rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-4 md:mb-6 group-hover:rotate-12 transition-transform shadow-lg shadow-[#D4AF37]/20">
-                    <svg className="w-7 h-7 md:w-10 md:h-10 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={feature.icon} /></svg>
+                  <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-[#D4AF37] to-[#FFD700] rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-4 md:mb-6 group-hover:rotate-12 transition-transform shadow-lg shadow-[#D4AF37]/20">
+                    <svg className="w-8 h-8 md:w-10 md:h-10 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={feature.icon} /></svg>
                   </div>
-                  <h3 className="text-base md:text-2xl font-bold mb-2 md:mb-4 text-center group-hover:text-[#D4AF37] transition-colors">{feature.title}</h3>
-                  <p className="text-xs md:text-base text-gray-400 leading-relaxed text-center">{feature.description}</p>
+                  <h3 className="text-lg md:text-2xl font-bold mb-2 md:mb-4 text-center group-hover:text-[#D4AF37] transition-colors">{feature.title}</h3>
+                  <p className="text-sm md:text-base text-gray-400 leading-relaxed text-center">{feature.description}</p>
                 </div>
               </div>
             ))}
@@ -287,18 +286,18 @@ export default function HomePage() {
       {/* ============================================ */}
       <section className="section-padding bg-slate-800/50">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-8 md:mb-16" data-aos="fade-up">
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold mb-3 md:mb-4">Comment <span className="text-[#D4AF37]">Acheter</span> ?</h2>
+          <div className="text-center mb-10 md:mb-16" data-aos="fade-up">
+            <h2 className="text-3xl sm:text-3xl md:text-5xl font-extrabold mb-3 md:mb-4">Comment <span className="text-[#D4AF37]">Acheter</span> ?</h2>
             <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] mx-auto mb-4 md:mb-6"></div>
-            <p className="text-sm md:text-xl text-gray-300 max-w-3xl mx-auto">Un processus simple et transparent pour devenir propriétaire.</p>
+            <p className="text-[15px] md:text-xl text-gray-300 max-w-3xl mx-auto">Un processus simple et transparent pour devenir propriétaire.</p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 relative">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-8 relative">
             {steps.map((step, index) => (
               <div key={step.number} className="text-center relative" data-aos="fade-up" data-aos-delay={index * 200}>
-                <div className="w-14 h-14 md:w-20 md:h-20 bg-gradient-to-br from-[#D4AF37] to-[#FFD700] rounded-full flex items-center justify-center mx-auto mb-3 md:mb-6 text-slate-900 text-xl md:text-3xl font-bold shadow-lg shadow-[#D4AF37]/20 hover:scale-110 transition-transform">{step.number}</div>
-                <h3 className="text-sm md:text-xl font-bold mb-1 md:mb-3">{step.title}</h3>
-                <p className="text-[10px] md:text-sm text-gray-400">{step.description}</p>
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-[#D4AF37] to-[#FFD700] rounded-full flex items-center justify-center mx-auto mb-3 md:mb-6 text-slate-900 text-xl md:text-3xl font-bold shadow-lg shadow-[#D4AF37]/20 hover:scale-110 transition-transform">{step.number}</div>
+                <h3 className="text-[15px] md:text-xl font-bold mb-1 md:mb-3">{step.title}</h3>
+                <p className="text-xs md:text-sm text-gray-400">{step.description}</p>
                 {index < steps.length - 1 && (
                   <div className="hidden md:block absolute top-10 right-0 transform translate-x-1/2 -translate-y-1/2">
                     <svg className="w-6 h-6 md:w-8 md:h-8 text-[#D4AF37]/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
@@ -315,25 +314,25 @@ export default function HomePage() {
       {/* ============================================ */}
       <section className="section-padding bg-slate-900">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-8 md:mb-16" data-aos="fade-up">
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold mb-3 md:mb-4">Ce Que Disent <span className="text-[#D4AF37]">Nos Clients</span></h2>
+          <div className="text-center mb-10 md:mb-16" data-aos="fade-up">
+            <h2 className="text-3xl sm:text-3xl md:text-5xl font-extrabold mb-3 md:mb-4">Ce Que Disent <span className="text-[#D4AF37]">Nos Clients</span></h2>
             <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] mx-auto mb-4 md:mb-6"></div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
             {testimonials.map((testimonial, index) => (
-              <div key={testimonial.name} className="bg-slate-800/50 backdrop-blur-sm rounded-xl md:rounded-2xl p-5 md:p-8 border border-gray-700/50 card-hover" data-aos="fade-up" data-aos-delay={index * 200}>
+              <div key={testimonial.name} className="bg-slate-800/50 backdrop-blur-sm rounded-xl md:rounded-2xl p-6 md:p-8 border border-gray-700/50 card-hover" data-aos="fade-up" data-aos-delay={index * 200}>
                 <div className="flex mb-3 md:mb-4">
                   {[...Array(5)].map((_, i) => (
                     <svg key={i} className="w-4 h-4 md:w-5 md:h-5 text-[#D4AF37]" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
                   ))}
                 </div>
-                <p className="text-xs md:text-base text-gray-300 mb-4 md:mb-6 italic leading-relaxed">&ldquo;{testimonial.text}&rdquo;</p>
+                <p className="text-sm md:text-base text-gray-300 mb-4 md:mb-6 italic leading-relaxed">&ldquo;{testimonial.text}&rdquo;</p>
                 <div className="flex items-center">
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-[#D4AF37] to-[#FFD700] rounded-full flex items-center justify-center text-slate-900 font-bold text-sm md:text-base shadow-lg">{testimonial.initials}</div>
+                  <div className="w-11 h-11 md:w-12 md:h-12 bg-gradient-to-br from-[#D4AF37] to-[#FFD700] rounded-full flex items-center justify-center text-slate-900 font-bold text-sm md:text-base shadow-lg">{testimonial.initials}</div>
                   <div className="ml-3 md:ml-4">
                     <h4 className="font-bold text-white text-sm md:text-base">{testimonial.name}</h4>
-                    <p className="text-[10px] md:text-sm text-gray-400">{testimonial.role}</p>
+                    <p className="text-xs md:text-sm text-gray-400">{testimonial.role}</p>
                   </div>
                 </div>
               </div>
@@ -345,14 +344,14 @@ export default function HomePage() {
       {/* ============================================ */}
       {/* CTA - RESPONSIVE */}
       {/* ============================================ */}
-      <section className="relative py-12 md:py-20 overflow-hidden">
+      <section className="relative py-14 md:py-20 overflow-hidden">
         <div className="absolute inset-0">
           <Image src="/images/terrain-background2.jpg" alt="Contactez Melly Groupe" fill className="object-cover" sizes="100vw" />
           <div className="absolute inset-0 bg-slate-900/90"></div>
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center px-4" data-aos="zoom-in" data-aos-duration="1000">
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold mb-4 md:mb-6">Prêt à <span className="text-[#D4AF37]">Investir</span> ?</h2>
-          <p className="text-sm md:text-xl text-gray-300 mb-6 md:mb-10">Contactez <strong className="text-[#D4AF37]">Melly Groupe</strong> pour une consultation gratuite.</p>
+          <h2 className="text-3xl sm:text-3xl md:text-5xl font-extrabold mb-4 md:mb-6">Prêt à <span className="text-[#D4AF37]">Investir</span> ?</h2>
+          <p className="text-[15px] md:text-xl text-gray-300 mb-6 md:mb-10">Contactez <strong className="text-[#D4AF37]">Melly Groupe</strong> pour une consultation gratuite.</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center max-w-md sm:max-w-none mx-auto">
             <Link href="/contact" className="btn-primary pulse-gold text-center">Nous Contacter</Link>
             <a href="tel:+237673620096" className="btn-outline text-center">+237 673 620 096</a>
@@ -363,16 +362,16 @@ export default function HomePage() {
       {/* ============================================ */}
       {/* PARTENAIRES - RESPONSIVE */}
       {/* ============================================ */}
-      <section className="py-8 md:py-16 bg-slate-800">
+      <section className="py-10 md:py-16 bg-slate-800">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-8 md:mb-12" data-aos="fade-up">
-            <h3 className="text-lg md:text-2xl font-bold text-[#D4AF37] mb-6 md:mb-8">Ils Nous Font Confiance</h3>
+            <h3 className="text-xl md:text-2xl font-bold text-[#D4AF37] mb-6 md:mb-8">Ils Nous Font Confiance</h3>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 items-center justify-items-center opacity-50">
             {partners.map((partner, index) => (
               <div key={partner.label} className="text-center group cursor-default" data-aos="fade-up" data-aos-delay={index * 100}>
-                <svg className="w-8 h-8 md:w-12 md:h-12 text-[#D4AF37] mb-1 md:mb-2 mx-auto group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={partner.icon} /></svg>
-                <p className="text-[10px] md:text-sm text-gray-400 font-medium">{partner.label}</p>
+                <svg className="w-9 h-9 md:w-12 md:h-12 text-[#D4AF37] mb-1 md:mb-2 mx-auto group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={partner.icon} /></svg>
+                <p className="text-xs md:text-sm text-gray-400 font-medium">{partner.label}</p>
               </div>
             ))}
           </div>
