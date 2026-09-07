@@ -198,7 +198,7 @@ export default function MellyEmploiPage() {
 
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto pt-20">
           <h1 className="text-5xl md:text-7xl font-extrabold mb-6" data-aos="fade-up">
-            Melly <span className="text-accent-light">Emploi</span>
+            Melly <span className="text-accent-light">Emplois</span>
           </h1>
           <p className="text-xl text-gray-300 mb-8" data-aos="fade-up" data-aos-delay="200">
             Trouvez les meilleures opportunités professionnelles au Cameroun
